@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero-Waste</title>
+  <link rel="stylesheet" href="./css/style/index.css">
+</head>
+<body>
+    <!-- ================= -->
+    <!--          son      -->
+    <!-- ================= -->
+    <header class="header">
+
+    </header>
+
+    <main>
+        <!-- mbti 질문지 -->
+        <section class="mbti">
+            <h1 style="a11yHidden"></h1>
+            <form action="" class="mbti__survey activate">
+                <label for="mbtiRange" class="a11yHidden">현재 페이지</label>
+                <input type="range" class="mbti__range" name="page" id="mbtiRange" min="1" max="12" step="1" />
+                <fieldset class="mbti__radioInput activate" data-num="1">
+                    <legend class="a11yHidden">1번 문제</legend>
+                    <div class="mbti__radioInput__q">음료를 마실 때</div>
+                    <label for="q1R1" class="mbti__radioInput__label">플라스틱 일회용 빨대를 사용해요.</label>
+                    <input type="radio" name="q1" id="q1R1" value="1" class="mbti__radioInput__radio"/>
+                    <label for="q1R2" class="mbti__radioInput__label">유리, 스테인리스 재질의 다회용 빨대를 사용해요.</label>
+                    <input type="radio" name="q1" id="q1R2" value="2" class="mbti__radioInput__radio"/>
+                </fieldset>
+                <fieldset class="mbti__radioInput" data-num="2">
+                    <legend class="a11yHidden">2번 문제</legend>
+                    <div class="mbti__radioInput__q">설거지를 할 때</div>
+                    <label for="q2R1" class="mbti__radioInput__label">플라스틱 섬유로 만든 수세미를 사용해요.</label>
+                    <input type="radio" name="q2" id="q2R1" value="3" class="mbti__radioInput__radio"/>
+                    <label for="q2R2" class="mbti__radioInput__label">식물성 천연 수세미를 사용해요.</label>
+                    <input type="radio" name="q2" id="q2R2" value="4" class="mbti__radioInput__radio"/>
+                </fieldset>
+            </form>
+        </section>
+        <!-- mbti 결과 -->
+        <section class="mbti-r">
+            <h2 class="mbti-r__heading a11yHidden">나의 제로웨이스트력 결과</h2>
+            <div class="mbti-r__container">
+              <div class="mbti-r__iam">
+                <p>당신은...</p>
+                <p>지구의 <strong>바퀴벌레</strong></p>
+              </div>
+              <img src="" alt="바퀴벌레" class="mbti-r__image" aria-hidden="true">
+              <ul class="mbti-r__list">
+                <li>블라블라</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem culpa earum, voluptatum veritatis sapiente id consequuntur autem doloremque expedita ipsam ex quis perspiciatis vero voluptatem ratione tempora voluptas laborum aliquid.</li>
+                <li>블라블라라라라</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem culpa earum, voluptatum veritatis sapiente id consequuntur autem doloremque expedita ipsam ex quis perspiciatis vero voluptatem ratione tempora voluptas laborum aliquid.</li>
+              </ul>
+              <div class="mabi-r__share">
+              <!-- 인스타(mbti-r__share__insta), 페이스북, ... IR, 스프라이트 기법 사용 -->
+              </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+
+    </footer>
+    <script src="./src/js/main.js"></script>
+</body>
+</html>

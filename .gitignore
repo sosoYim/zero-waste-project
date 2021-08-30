@@ -1,6 +1,7 @@
 node_modules/
 css/
 src/style/index.scss
-src/images/
+# src/images/
+# src/js
 .gitignore
 package-lock.json
