@@ -4,98 +4,259 @@ body {
   background-color: $bg-color;
 }
 
+// // Horizontal Scroll
+.intro__container {
+  @include flexbox(row, $align-items:center);
+  width: 300%;
+}
+
+.intro__slide {
+  width: 100%;
+}
+
+// // INTRO(1)
 .intro__state {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  // background-color: skyblue;
+  @include desktop {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  @include mobile {
+    max-width: none;
+    padding: rem(20px);
+  }
 
   .state {
     &__title {
-      font-size: 5vw;
       font-weight: 700;
       text-align: center;
-      // background-color: lime;
+
+      @include desktop {
+        font-size: 5vw;
+      }
+
+      @include mobile {
+        font-size: 10.66666666666667vw;
+        word-break: keep-all;
+      }
     }
 
     &__list {
-      margin-top: 6%;
+      @include desktop {
+        margin-top: 6%;
+
+        &:after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+      }
+
+      @include mobile {
+        @include flexbox(column);
+      }
     }
 
-    &__list:after {
-      content: "";
-      display: block;
-      clear: both;
-    }
 
     &__subject {
-      display: inline-block;
-      // background-color: yellow;
-      font-size: 3vw;
       font-weight: 700;
-      padding: 0 4%;
       margin-top: 4%;
+
+      @include desktop {
+        display: inline-block;
+        font-size: 3vw;
+        padding: 0 4%;
+
+      }
+
+      @include mobile {
+        font-size: 6.4vw;
+      }
     }
 
     &__thumbnail {
-      float: left;
-      // background-color: tomato;
-      width: 51%;
+      @include desktop {
+        float: left;
+        width: 51%;
 
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      @include mobile {
+        order: -1;
+        margin-top: 5%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &__description {
+      margin-top: 3%;
+
+      @include desktop {
+        float: right;
+        width: 49%;
+        font-size: 1.3333333333333333vw;
+        padding: 0 4%;
+        line-height: 1.5;
+
+        bold {
+          font-size: 2vw;
+        }
+      }
+
+      @include mobile {
+        font-size: 5.333333333333333vw;
+        line-height: 1.5;
+
+        bold {
+          font-size: 6vw;
+        }
+      }
+    }
+
+    &__more {
+      @include desktop {
+        width: 49%;
+        height: 10.37306642402184%;
+        position: absolute;
+        padding: 0 4%;
+        bottom: 0;
+        right: 0;
+        margin-bottom: rem(16px);
+      }
+
+      @include mobile {
+        @include flexbox(row, flex-end, center);
+        height: rem(57px);
+      }
+
+
+      @at-root .more {
+
+        &__text {
+          @include desktop {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.6666666666666667vw;
+            padding: rem(8px) 0;
+          }
+
+          @include mobile {
+            font-size: 4.266666666666667vw;
+            margin-right: 4%;
+          }
+        }
+
+        &__arrow {
+          @include desktop {
+            position: absolute;
+            left: 32%;
+            width: 9.693877551020408%;
+            height: 100%;
+            @include flexbox(row, center, center);
+            background-color: $blue1;
+            border-radius: 50%;
+
+            [aria-hidden] {
+              color: $white;
+              font-size: 2vw;
+            }
+          }
+
+          @include mobile {
+            @include flexbox(row, center, center);
+            background-color: $blue1;
+            border-radius: 50%;
+            width: rem(57px);
+            height: rem(57px);
+
+            [aria-hidden] {
+              color: $white;
+              font-size: 3vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// // INTRO(2)
+.intro__statistics {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .statistics {
+    &__list {
+      @include desktop {
+        @include flexbox(row);
+      }
+
+      @include mobile {
+        max-width: none;
+      }
+    }
+
+    &__item {
+
+      @include desktop {
+        width: 50%;
+        padding: rem(50px);
+      }
+
+      @include mobile {
+        width: 100%;
+      }
+
+    }
+
+    &__canvas {}
+
+    &__canvas--pie {}
+
+    &__canvas--line {}
+  }
+
+
+}
+
+// // INTRO(3)
+.intro__zero-waste {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .zero-waste {
+    &__cover {
       img {
+        // display: block;
+        // margin: 0 auto;
         width: 100%;
         height: auto;
       }
     }
 
-    &__description {
-      float: right;
-      // background-color: lime;
-      width: 49%;
-      font-size: 1.3333333333333333vw;
-      padding: 0 4%;
+    &__title {
+      font-size: 5vw;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
       margin-top: 3%;
-      line-height: 1.5;
-
-      bold {
-        font-size: 2vw;
-      }
     }
 
-    &__more {
-      width: 49%;
-      height: 10.37306642402184%;
-      position: absolute;
-      padding: 0 4%;
-      bottom: 0;
-      right: 0;
-      margin-bottom: rem(16px);
-
-      @at-root .more {
-        &__text {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          // background-color: blue;
-          font-size: 1.6666666666666667vw;
-          padding: rem(8px) 0;
-        }
-
-        &__arrow {
-          position: absolute;
-          left: 32%;
-          width: 9.693877551020408%;
-          height: 100%;
-          @include flexbox(row, center, center);
-          background-color: $blue1;
-          border-radius: 50%;
-
-          [aria-hidden] {
-            color: $white;
-            font-size: 2vw;
-          }
-        }
-      }
+    &__description {
+      font-size: 2vw;
+      text-align: center;
+      margin-top: 2%;
+      line-height: 1.5;
     }
   }
 }
