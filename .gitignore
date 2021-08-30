@@ -1,2 +1,6 @@
 node_modules/
 css/
+src/style/index.scss
+src/images/
+.gitignore
+package-lock.json

@@ -1,0 +1,108 @@
+@use './../utils' as *;
+
+// STATUS components==============
+.activate{
+    display: block !important;
+}
+.desactivate{
+    display: none !important;
+}
+
+// Defult form components=========
+.button {
+    appearance: none;
+    // pointer-events: none;
+    border: 0;
+    background : $black;
+    color: $white;
+    padding: rem(8px) rem(16px);
+    font-size: rem(16px);
+    border-radius: rem(4px);
+}
+
+// range
+@mixin range($bgTrack: $primary, $bgThumb: $primary, $thumbSizePx: 50px){
+    input[type=range]{
+        -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+        width: 100%; /* Specific width is required for Firefox. */
+        background: transparent; /* Otherwise white in Chrome */
+    
+        background-color: $bgTrack;
+        border-radius: rem(3px);
+        height: rem(12px);
+        margin-bottom: rem($thumbSizePx);
+    }
+    input[type=range]::-webkit-slider-thumb {
+        //::-moz-range-thumb, ::-ms-thumb 둘다 해줘야 함
+        -webkit-appearance: none;
+        appearance: none;
+        height: rem($thumbSizePx);
+        width: rem($thumbSizePx);
+        background-color: $bgThumb;
+        border-radius: 50%;
+    }
+    
+    input[type=range]:focus {
+        outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+        // border: 1px solid pink;
+    }
+    
+    // input[type=range]::-ms-track {
+    //     width: 100%;
+    //     cursor: pointer;
+    
+    //     /* Hides the slider so custom styles can be added */
+    //     background: transparent; 
+    //     border-color: transparent;
+    //     color: transparent;
+    // }
+}
+
+.mbti{
+    @include autoMargin;
+    @include range;
+    width: 45vw;
+    background-color: yellow;
+    text-align: center;
+    padding: rem(32px);
+
+    //start page
+    &__heading{
+        font-size: rem(45px);
+    }
+    &__start-btn{
+        @include boxSizeFull(700px);
+        height: rem(64px);
+        margin: rem(42px) 0;
+        font-size: rem(32px);
+    }
+    &__survey{
+        display: none;
+        height: 100%;
+    }
+
+    &__radioInput{
+        background-color: pink;
+        width: 100%;
+        display: none;
+        position: relative;
+        &__q{
+            font-size: rem(32px);
+        }
+        &__radio{
+            appearance: none;
+        }
+        &__label{
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            height: auto;
+            text-align: center;
+            padding: rem(32px) rem(16px);
+            border-radius: rem(8px);
+            background-color: $primary;
+            color: $white;
+        }   
+        
+    }
+}
