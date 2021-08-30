@@ -1,3 +1,101 @@
+@use './../utils'as *;
+
 body {
-  background-color: blue;
+  background-color: $bg-color;
+}
+
+.intro__state {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  // background-color: skyblue;
+
+  .state {
+    &__title {
+      font-size: 5vw;
+      font-weight: 700;
+      text-align: center;
+      // background-color: lime;
+    }
+
+    &__list {
+      margin-top: 6%;
+    }
+
+    &__list:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    &__subject {
+      display: inline-block;
+      // background-color: yellow;
+      font-size: 3vw;
+      font-weight: 700;
+      padding: 0 4%;
+      margin-top: 4%;
+    }
+
+    &__thumbnail {
+      float: left;
+      // background-color: tomato;
+      width: 51%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__description {
+      float: right;
+      // background-color: lime;
+      width: 49%;
+      font-size: 1.3333333333333333vw;
+      padding: 0 4%;
+      margin-top: 3%;
+      line-height: 1.5;
+
+      bold {
+        font-size: 2vw;
+      }
+    }
+
+    &__more {
+      width: 49%;
+      height: 10.37306642402184%;
+      position: absolute;
+      padding: 0 4%;
+      bottom: 0;
+      right: 0;
+      margin-bottom: rem(16px);
+
+      @at-root .more {
+        &__text {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          // background-color: blue;
+          font-size: 1.6666666666666667vw;
+          padding: rem(8px) 0;
+        }
+
+        &__arrow {
+          position: absolute;
+          left: 32%;
+          width: 9.693877551020408%;
+          height: 100%;
+          @include flexbox(row, center, center);
+          background-color: $blue1;
+          border-radius: 50%;
+
+          [aria-hidden] {
+            color: $white;
+            font-size: 2vw;
+          }
+        }
+      }
+    }
+  }
 }
