@@ -1,0 +1,34 @@
+@use '../utils/' as *;
+
+.footer {
+    max-width: 1200px;
+    margin: 0 auto rem(80px) auto;
+    [class*='-heading'] {
+        font-weight: 500;
+    }
+    [class*='-item'] {
+        font-size: rem(14px);
+        font-weight: 400;
+    }
+
+    @include desktop {
+        display: flex;
+        flex-flow: wrap;
+        &__connect, &__support {
+            width: 50%;
+        }
+        &__connect-heading, &__support-heading {
+            margin-bottom: rem(16px);
+        }
+        &__follow {
+            margin-top: rem(40px);
+            display: flex;
+            &-heading {
+                margin-right: rem(16px);
+            }
+            &-item {
+                display: inline-block;
+            }
+        }
+    }
+}
