@@ -7,13 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zero-Waste</title>
   <link rel="stylesheet" href="./css/style/index.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
-    integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"
-    integrity="sha512-DlTk2PLUinhBupE89kHOJTt11QqbRMQVlbb26XVDvp4D1kt0fRvQJslvZnTelRJHq6yK0tIPCR7cul8+9Blz0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -41,88 +34,70 @@
     <!-- ================= -->
     <!--          park     -->
     <!-- ================= -->
-    <div class="intro__container">
-      <div class="intro__slide">
-        <section class="intro intro__state">
-          <h2 class="state__title">현재 환경 실태를 아시나요?</h2>
-          <dl class="state__list">
-            <dt class="state__subject">쌓여가는 플라스틱</dt>
-            <dd class="state__thumbnail">
-              <img src="./src/images/bird-onlake.png" alt="A bird on lake">
-            </dd>
-            <dd class="state__description">
-              <bold>플라스틱</bold>은 분해되는 데 수천 년이 걸리고 폐기 시 대부분 유독 물질을 만들어냅니다. 포장재, 비닐봉지, 도시락 시트, 빨대, 트레이 및 컵과 같은
-              일회용 플라스틱은 도시 쓰레기의 30%에 해당하는데, 전 세계적으로 재활용되는 플라스틱은 15~20%에 불과하며 대부분이 연소되거나 매립지, 습지, 바다로 흘러가 환경을 오염시킵니다.
-            </dd>
-          </dl>
-          <div class="state__more">
-            <a href="#" class="more__text">Learn More</a>
-            <a href="#" class="more__arrow"><span aria-hidden="true">→</span></a>
+    <section class="intro intro__state">
+      <h2 class="state__heading">현재 환경 실태를 아시나요?</h2>
+      <div class="state__content">
+        <div class="content__inner">
+          <div class="content__subject-wrapper">
+            <h3 class="content__subject"><span>쌓여 가는 플라스틱</span></h3>
           </div>
-        </section>
-      </div>
-      <div class="intro__slide">
-        <section class="intro intro__statistics">
-          <h2 class="statistics__title">임시 제목</h2>
-          <ul class="statistics__list">
-            <li class="statistics__item">
-              <canvas id="pieChart" class="statisctics__canvas statisctics__canvas--pie"></canvas>
-            </li>
-            <li class="statistics__item">
-              <canvas id="lineChart" class="statisctics__canvas statisctics__canvas--line"></canvas>
-            </li>
-          </ul>
-        </section>
-      </div>
-      <div class="intro__slide">
-        <section class="intro intro__zero-waste">
-          <figure class="zero-waste__cover">
-            <img src="./src/images/zero-waste.png" alt="zero waste">
-            <figcaption class="a11yHidden">zero waste</figcaption>
+          <figure class="state__image">
+            <img src="./src/images/bird-onlake.png" alt="플라스틱 병을 물고 있는 새">
           </figure>
-          <h2 class="zero-waste__title">
-            zero - waste ?
-          </h2>
-          <p class="zero-waste__description">
-            모든 제품, 포장 및 자재를 태우지 않고, 환경이나 인간의 건강을 위협할 수 있는 토지, 해양, 공기로 배출하지 않으며 책임 있는 생산, 소비, 재사용 및 회수를 통해 모든 자원을 보존하는 것
-          </p>
-        </section>
+          <!-- <div class="content__desc-wrapper">
+            <p class="content__desc">
+              <b>플라스틱</b>은 분해되는 데 수천 년이 걸리고 폐기 시 대부분 유독 물질을 만들어냅니다. 포장재, 비닐봉지, 도시락 시트, 빨대, 트레이 및 컵과 같은
+              일회용 플라스틱은 도시 쓰레기의 30%에 해당하는데, 전 세계적으로 재활용되는 플라스틱은 15~20%에 불과하며 대부분이 연소되거나 매립지, 습지, 바다로 흘러가 환경을 오염시킵니다.
+            </p>
+          </div> -->
+        </div>
       </div>
-    </div>
-    <!-- ================= -->
-    <!--          park     -->
-    <!-- ================= -->
-
-
-    <!-- ================= -->
-    <!--          seo      -->
-    <!-- ================= -->
-    <section class="topic">
-
     </section>
-    <section class="cases">
-
-    </section>
-    <!-- ================= -->
-    <!--          seo      -->
-    <!-- ================= -->
+    <section class="intro intro__desc">
+      <!-- ================= -->
+      <!--          park     -->
+      <!-- ================= -->
 
 
-    <!-- ================= -->
-    <!--          yim      -->
-    <!-- ================= -->
-    <section class="mbti">
+      <!-- ================= -->
+      <!--          seo      -->
+      <!-- ================= -->
+      <section class="topic">
 
-    </section>
-    <!-- ================= -->
-    <!--          yim      -->
-    <!-- ================= -->
+      </section>
+      <section class="cases">
+
+      </section>
+      <!-- ================= -->
+      <!--          seo      -->
+      <!-- ================= -->
+
+
+      <!-- ================= -->
+      <!--          yim      -->
+      <!-- ================= -->
+      <section class="mbti">
+
+      </section>
+      <!-- ================= -->
+      <!--          yim      -->
+      <!-- ================= -->
   </main>
-  <footer class="footer">
-
-  </footer>
-  <script defer src="./src/js/main.js"></script>
-  <script defer src="./src/js/scroll.js"></script>
+  <!-- <footer class="footer"> -->
+  <!--  -->
+  <!-- </footer> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+  <!-- <script src="./src/js/main.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+    integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
+    integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"
+    integrity="sha512-DlTk2PLUinhBupE89kHOJTt11QqbRMQVlbb26XVDvp4D1kt0fRvQJslvZnTelRJHq6yK0tIPCR7cul8+9Blz0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./src/js/scroll.js"></script>
 </body>
 
 </html>
