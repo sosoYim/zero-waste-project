@@ -1,0 +1,22 @@
+@use '../utils' as *;
+
+.cases{
+    z-index: 20;
+    background-color: deeppink;
+    position: relative;
+
+    &__list{
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__card{
+        display: inline-block;
+    }
+
+    &__pic{
+        width: 15%;
+    }
+
+
+}

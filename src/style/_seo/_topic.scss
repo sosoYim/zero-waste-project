@@ -1,0 +1,123 @@
+@use '../utils' as *;
+
+.temp {
+    background-color: pink;
+    height: 100vh;
+    position: relative;
+    z-index: 30;
+}
+
+.topic {
+
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF;
+    font-weight: 400;
+
+
+    &__container{
+        scroll-snap-type: y mandatory;
+    }
+
+    &__list{
+        height: 500vh;
+    }
+
+    &__items {
+        scroll-snap-align: start;
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        color: #FFF;
+        margin-bottom: rem(2px);
+        /* 한 페이지 지나갈 때 흰색 선으로 구분 */
+    }
+
+    &__items:after {
+        content: "";
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__items:nth-child(1) {
+        z-index: 2;
+
+        &:after{
+            background: navy;
+        }
+    }
+
+    &__items:nth-child(2) {
+        z-index: 3;
+
+        &:after{
+            background: darkorchid;
+        }
+    }
+
+    &__items:nth-child(3) {
+        z-index: 4;
+
+        &:after{
+            background: darkseagreen;
+        }
+    }
+
+    &__items:nth-child(4) {
+        z-index: 5;
+
+        &:after{
+            background: darksalmon;
+        }
+    }
+
+    &__items:nth-child(5) {
+        z-index: 6;
+
+        &:after{
+            background: darkturquoise;
+        }
+    }
+
+    &__slogan {
+
+        z-index: 10;
+        position: fixed;
+        width: 100%;
+        top: 20%;
+
+        &--eng {
+            font-weight: 700;
+            font-size: rem(100px);
+            text-align: left;
+        }
+
+        &--emp{
+            font-size: rem(400px);
+        }
+
+        &--kor {
+            font-size: 1em;
+            font-weight: 400;
+            right: 10%;
+            font-size: 2rem;
+            text-align: right;
+            position: fixed;
+            top: 30%;
+            max-width: 50%;
+            word-break: keep-all;
+            line-height: 1.3;
+        }
+    }
+
+}
