@@ -1,8 +1,6 @@
 //======================================
 //    YIM START
 //======================================
-// let mbtiRange = document.getElementById("mbtiRange");
-// let curPage = mbtiRange.value;
 //all radios
 const radios = document.querySelectorAll('input[class="field__radio"]');
 let result = 0;
@@ -22,23 +20,6 @@ radios.forEach(function(elem) {
       console.log(`resultValue.value : ${resultValue.value}`);
     });
 });
-
-
-// // dont touch
-// function showPageFromRange(){
-//     let page = mbtiRange.value;
-//     const prevRadioInput = document.getElementById(`mbti-${curPage}`);
-//     prevRadioInput.classList.remove('radioInput--activate');
-//     //TODO: pageMax 이용해서 최대 갈 수 있는 (대답한라디오 문제)까지만 가기
-//     const radioInput = document.getElementById(`mbti-${page}`);
-//     radioInput.classList.add('radioInput--activate');
-//     curPage = page;
-// }
-
-// // range에서 페이지 이동
-// mbtiRange.addEventListener('input', showPageFromRange);
-
-
 //======================================
 //    YIM END
 //======================================
