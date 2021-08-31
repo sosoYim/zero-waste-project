@@ -1,8 +1,23 @@
 gsap.registerPlugin(ScrollTrigger);
 
+const showEl = gsap.utils.toArray('.state__heading')
+showEl.forEach((text, i) => {
+  ScrollTrigger.create({
+    trigger: text,
+    toggleClass: 'show',
+    start: "top center",
+    end: "bottom -100%",
+  }), 
+  ScrollTrigger.create({
+    trigger: text,
+    toggleClass: 'is-active',
+    start: "top center",
+    end: "bottom -100%",
+  })
+})
+
 gsap.to(".state__content", {
   scrollTrigger: {
-    markers: true,
     trigger: ".state__content",
     scrub: true,
     pin: true,
@@ -10,12 +25,12 @@ gsap.to(".state__content", {
     end: "bottom -100%",
     toggleClass: "is-active",
     ease: "power2"
-  }
+  },
 });
 
 gsap.to(".state__image img", {
   scrollTrigger: {
-    trigger: ".hero",
+    trigger: ".state__content",
     scrub: 0.5,
     start: "top bottom",
     end: "bottom -300%",
@@ -24,16 +39,34 @@ gsap.to(".state__image img", {
   y: "-30%"
 });
 
-// gsap.utils.toArray(".intro").forEach((panel, i) => {
-//   ScrollTrigger.create({
-//     trigger: panel,
-//     start: "top top", 
-//     pin: true, 
-//     pinSpacing: false
-//   });
-// });
+const showVideo = gsap.utils.toArray('.state__desc-wrapper')
+showVideo.forEach((text, i) => {
+  ScrollTrigger.create({
+    trigger: text,
+    toggleClass: 'show',
+    start: "top center",
+    end: "bottom -100%",
+  })
+})
 
 
-// ScrollTrigger.create({
-//   snap: 1 / 4 // snap whole page to the closest section!
-// });
+// let el = [...document.querySelectorAll('.intro__state')]
+
+// let options = {
+//   rootMargin: '-10%',
+//   threshold: 0.0
+// }
+
+// let observer = new IntersectionObserver(showItem, options)
+
+// function showItem(entries) {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+
+//     }
+//   })
+// }
+
+// el.forEach(item => {
+//   observer.observe(item)
+// })
