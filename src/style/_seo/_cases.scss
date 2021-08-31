@@ -1,21 +1,42 @@
 @use '../utils' as *;
 
 .cases{
+
     z-index: 20;
-    background-color: deeppink;
+    background-color: #FFF;
     position: relative;
+    min-height: 100vh;
+    text-align: center;
+
+    padding: rem(30px);
+
+    &__heading{
+        display: block;
+        font-size: rem(50px);
+        margin: rem(20px);
+    }
 
     &__list{
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: auto;
     }
 
     &__card{
         display: inline-block;
+        max-width: rem(300px);
+        margin: rem(10px);
+    }
+
+    &__slogan{
+        margin-bottom: rem(10px);
     }
 
     &__pic{
-        width: 15%;
+        width: 95%;
+        border-radius: rem(5px);
     }
 
 
