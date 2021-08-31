@@ -1,43 +1,83 @@
-@use '../utils' as *;
+@use '../utils'as *;
 
-.cases{
+.cases {
 
     z-index: 20;
     background-color: #FFF;
     position: relative;
     min-height: 100vh;
     text-align: center;
+    color: $text-color2;
+    padding: rem(100px);
 
-    padding: rem(30px);
-
-    &__heading{
+    &__heading {
         display: block;
-        font-size: rem(50px);
-        margin: rem(20px);
+        font-size: rem(70px);
+        margin-bottom: rem(50px);
+        font-weight: 700;
+        word-break: keep-all;
+        line-height: 1.3;
+
+        &--emp {
+            color: $primary;
+        }
     }
 
-    &__list{
+    &__list {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         text-align: center;
         margin: auto;
+        @include flexbox(row, center, center, wrap);
     }
 
-    &__card{
+    &__card {
         display: inline-block;
         max-width: rem(300px);
+        min-width: rem(200px);
         margin: rem(10px);
+        overflow: hidden;
+        position: relative;
     }
 
-    &__slogan{
+    &__slogan {
         margin-bottom: rem(10px);
+        font-size: rem(35px);
+        font-weight: 700;
+        text-align: left;
+        padding-left: rem(16px);
     }
 
-    &__pic{
-        width: 95%;
+    &__pic {
+        width: 90%;
         border-radius: rem(5px);
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1), 8px 8px 8px rgba(0, 0, 0, 0.1);
     }
+
+    &__hashtag {
+        font-size: rem(16px);
+        margin-top: rem(10px);
+    }
+
+    &__disc{
+        display: block;
+        font-size: rem(20px);
+        width: 80%;
+        word-break: keep-all;
+        line-height: 1.3;
+        position: absolute;
+        bottom: 25%;
+        right: 50%;
+        transform: translateX(50%);
+        background-color: yellowgreen;
+    }
+
+    &__card:hover &__disc{
+        transform: translateY(0);
+        background-color: red;
+    }
+
 
 
 }
