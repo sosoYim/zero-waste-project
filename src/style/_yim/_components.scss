@@ -1,8 +1,8 @@
 @use './../utils' as *;
 
 // STATUS components==============
-.is-active{
-    display: block !important;
+.is-flex-active{
+    display: flex !important;
 }
 .desactivate{
     display: none !important;
@@ -16,7 +16,7 @@
     background : $black;
     color: $white;
     padding: rem(8px) rem(16px);
-    font-size: rem(16px);
+    font-size: rem(32px);
     border-radius: rem(4px);
 }
 
@@ -29,7 +29,6 @@
     min-width: rem(767px);
     height: 70vh;
     min-height: rem(660px);
-    background-color: purple;
     text-align: center;
     padding: rem(32px);
     //center
@@ -42,17 +41,18 @@
         width: 100%;
     }
 
-    //start page
-    &__heading{
-        font-size: rem(45px);
-    }
-    &__start-btn{
-        @include boxSizeFull(700px);
-        height: rem(64px);
-        margin: rem(42px) 0;
-        font-size: rem(32px);
-    }
+    // //start page
+    // &__heading{
+    //     font-size: rem(45px);
+    // }
+    // &__start-btn{
+    //     @include boxSizeFull(700px);
+    //     height: rem(64px);
+    //     margin: rem(42px) 0;
+    //     font-size: rem(32px);
+    // }
     &__survey{
+        width: 100%;
         height: 100%;
     }
     // 페이지 게이지
@@ -63,64 +63,117 @@
     // 질문지
     // TODO:atroot
     &__field{
-        background-color: pink;
-        width: 100%;
-        // height: 80%;
-        display: none;
-        position: relative;
-        &--activate{
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-        &__q{
-            position: absolute;
-            font-size: rem(32px);
-            top: 0;
-        }
-        &__radio{
-            appearance: none;
-        }
-        &__label{
-            cursor: pointer;
-            display: block;
-            width: 100%;
-            height: auto;
-            text-align: center;
-            padding: rem(32px) rem(16px);
-            border-radius: rem(8px);
-            background-color: $primary;
-            color: $white;
-            margin-top: rem(16px);
-        }   
+
         
     }
 
-    &__bg-wave{
-        background-image: url("../../src/images/mbti-bg-wave.svg");
-        background-size: 250%;
+    // &__bg-wave{
+    //     background-image: url("../../src/images/mbti-bg-wave.svg");
+    //     background-size: 250%;
 
+    //     position: absolute;
+    //     top: 25%;
+    //     left: -50%;
+    //     // transform: translateX(50%);
+    //     width: 100vw;
+    //     padding: 0;
+    //     background-color: red;
+    //     //animation: waves 6s alternate infinite;
+
+    //     &--deepblue{
+    //         fill: $primary;
+    //     }
+
+    // }
+
+    // @keyframes waves {
+    //     0%{
+    //         transform: translateX(-25%);
+    //     }
+    //     100%{
+    //         transform: translateX(75%);
+    //     }
+    // }
+}
+
+.mbti-bg{
+    @include autoMargin;
+    overflow: hidden;
+    z-index: -1;
+
+    width: 40vw;
+    min-width: rem(767px);
+    height: 70vh;
+    min-height: rem(660px);
+    background-color: $primary;
+    text-align: center;
+    border-radius: rem(20px);
+    border: transparent;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+    //center
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    @include mobile{
+        width: 100%;
+        top: 10%;
+    }
+
+    &__wave{
+        height: 60%;
+    }
+    &__bear{
+        width: 30%;
         position: absolute;
-        top: 25%;
-        left: -50%;
-        // transform: translateX(50%);
-        width: 100vw;
-        padding: 0;
-        background-color: red;
-        //animation: waves 6s alternate infinite;
-
-        &--deepblue{
-            fill: $primary;
-        }
-
+        top: -50%;
+        animation: up-down;
+        // z-index: 10;
     }
+}
 
-    @keyframes waves {
-        0%{
-            transform: translateX(-25%);
-        }
-        100%{
-            transform: translateX(75%);
-        }
+@keyframes up-down {
+    from{
+        transform: translateY(0);
     }
+    to{
+        transform: translateY(30%);
+    }
+}
+
+.field{
+    width: 100%;
+    height: 70%;
+    margin-top: 25%;
+    display: none;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: rem(28px);
+    
+    &__q{
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        font-size: 3rem;
+        bottom: 70%;
+    }
+    &__radio{
+        appearance: none;
+    }
+    &__label{
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        padding: rem(32px) rem(16px);
+        border-radius: rem(8px);
+        background-color: $primary;
+        color: $white;
+        margin-top: rem(16px);
+    }   
 }

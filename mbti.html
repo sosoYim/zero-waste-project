@@ -19,42 +19,52 @@
     <main>
         <!-- mbti 질문지 -->
         <section class="mbti">
+            <!-- <img class="mbti-bg__bear" src="../../src/images/swimm-bear.png"> -->
+
             <h2 class="a11yHidden">제로 웨이스트 점수 질문지</h2>
             <form action="" class="mbti__survey">
                 <!-- <label for="mbtiRange" class="a11yHidden">현재 페이지</label>
                 <progress type="progress" class="" name="page" id="mbtiRange" min="1" max="4" value="1">1/12문제</progress> -->
-                <fieldset class="mbti__field is-active" id="mbti-1">
+                <fieldset class="mbti__field field is-flex-active" id="mbti-1">
                     <legend class="a11yHidden">1번 문제</legend>
-                    <p class="mbti__field__q">음료를 마실 때</p>
-                    <label for="q1R1" class="mbti__field__label">플라스틱 일회용 빨대를 사용해요.</label>
-                    <input type="radio" name="1" id="q1R1" value="1" class="mbti__field__radio" required/>
-                    <label for="q1R2" class="mbti__field__label">유리, 스테인리스 재질의 다회용 빨대를 사용해요.</label>
-                    <input type="radio" name="1" id="q1R2" value="2" class="mbti__field__radio" required/>
+                    <p class="field__q">음료를 마실 때</p>
+                    <label for="q1R1" class="field__label">플라스틱 일회용 빨대를 사용해요.</label>
+                    <input type="radio" name="1" id="q1R1" value="1" class="field__radio" required/>
+                    <label for="q1R2" class="field__label">유리, 스테인리스 재질의 다회용 빨대를 사용해요.</label>
+                    <input type="radio" name="1" id="q1R2" value="2" class="field__radio" required/>
                 </fieldset>
-                <fieldset class="mbti__field" id="mbti-2">
+                <fieldset class="mbti__field field" id="mbti-2">
                     <legend class="a11yHidden">2번 문제</legend>
-                    <div class="mbti__field__q">설거지를 할 때</div>
-                    <label for="q2R1" class="mbti__field__label">플라스틱 섬유로 만든 수세미를 사용해요.</label>
-                    <input type="radio" name="2" id="q2R1" value="1" class="mbti__field__radio" required/>
-                    <label for="q2R2" class="mbti__field__label">식물성 천연 수세미를 사용해요.</label>
-                    <input type="radio" name="2" id="q2R2" value="3" class="mbti__field__radio" required/>
+                    <div class="field__q">설거지를 할 때</div>
+                    <label for="q2R1" class="field__label">플라스틱 섬유로 만든 수세미를 사용해요.</label>
+                    <input type="radio" name="2" id="q2R1" value="1" class="field__radio" required/>
+                    <label for="q2R2" class="field__label">식물성 천연 수세미를 사용해요.</label>
+                    <input type="radio" name="2" id="q2R2" value="3" class="field__radio" required/>
                 </fieldset>
-                <fieldset class="mbti__field" id="mbti-3">
+                <fieldset class="mbti__field field" id="mbti-3">
                     <legend class="a11yHidden">3번 문제</legend>
-                    <div class="mbti__field__q">333334545</div>
-                    <label for="q3R1" class="mbti__field__label">플라스틱 섬유로 만든 수세미를 사용해요.</label>
-                    <input type="radio" name="3" id="q3R1" value="1" class="mbti__field__radio" required/>
-                    <label for="q3R2" class="mbti__field__label">식물성 천연 수세미를 사용해요.</label>
-                    <input type="radio" name="3" id="q3R2" value="3" class="mbti__field__radio" required/>
+                    <div class="field__q">333334545</div>
+                    <label for="q3R1" class="field__label">플라스틱 섬유로 만든 수세미를 사용해요.</label>
+                    <input type="radio" name="3" id="q3R1" value="1" class="field__radio" required/>
+                    <label for="q3R2" class="field__label">식물성 천연 수세미를 사용해요.</label>
+                    <input type="radio" name="3" id="q3R2" value="3" class="field__radio" required/>
                 </fieldset>
-                <div class="mbti__field" id="mbti-4">
+                <div class="mbti__field field" id="mbti-4">
                     <button class="button">결과 보기</button>
                     결과결과
                 </div>
             </form>
             <!-- <img class="mbti__bg-wave--deepblue" src="../../src/images/mbti-bg-wave.svg"></img> -->
-            <div class="mbti__bg-wave"></div>
         </section>
+        <div class="mbti-bg">
+            <div class="visual__ocean mbti-bg__wave">
+                <img class="mbti-bg__bear" src="../../src/images/swimm-bear.png">
+                <div class="visual__wave"></div>
+                <div class="visual__wave wave-effect2"></div>
+                <div class="visual__wave wave-effect3"></div>
+                <div class="visual__wave wave-effect4"></div>
+            </div> 
+        </div>
     </main>
     <footer class="footer">
 
