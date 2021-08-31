@@ -15,6 +15,37 @@
   <!-- ================= -->
   <header class="header">
 
+    <!-- 헤더 Wrapper -->
+    <div class="header__wrapper">
+      <h1 class="logo"><a href="#">Zero-Waste</a></h1>
+      <div class="header__menu">
+        <a href="#" class="header__menu-staff">Staff</a>
+        <button class="header__menu-button">
+          Menu
+          <div class="button--burger">
+            <span class="button--burger__bar"></span>
+            <span class="button--burger__bar"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- 네비게이션 -->
+    <nav class="header__nav">
+      <div class="header__nav-inner">
+        <h2 class="header__nav-heading">Let's Together!</h2>
+        <ul class="header__nav-list">
+          <li class="header__nav-item our-team"><a class="header__nav-link" href="#">Our Team</a></li>
+          <li class="header__nav-item news-views"><a class="header__nav-link" href="#">News & Views</a></li>
+          <li class="header__nav-item making-firm"><a class="header__nav-link" href="#">Making Firm</a></li>
+          <li class="header__nav-item support-us"><a class="header__nav-link" href="#">Support Us</a></li>
+        </ul>
+        <!-- 수정 -->
+        <button class="nav__close"><span>×</span></button>
+      </div>
+    </nav>
+
+
   </header>
   <!-- ================= -->
   <!--          son      -->
@@ -24,8 +55,22 @@
     <!--          son      -->
     <!-- ================= -->
     <section class="visual">
+      <div class="visual__background"></div>
+
+      <!-- 치고올라오는 물결 -->
+      <div class="first-access first-access-effect--1"></div>
+      <div class="first-access first-access-effect--2"></div>
+      <div class="first-access first-access-effect--3"></div>
+
+      <!-- 흐르는 물결 -->
+      <div class="visual__ocean">
+        <div class="visual__wave"></div>
+        <div class="visual__wave"></div>
+      </div>
 
     </section>
+    <!-- 뺄것 -->
+    <div class="blank"></div>
     <!-- ================= -->
     <!--          son      -->
     <!-- ================= -->
@@ -53,6 +98,9 @@
     <!-- ================= -->
 
     <!-- topic 섹션 -->
+
+    <div class="temp">임시 디비젼</div>
+
 
     <section class="topic">
       <h2 class="topic__heading a11y-hidden">제로 웨이스트 실천 방법 - 5R</h2>
@@ -113,7 +161,6 @@
       </div>
       
     </section>
-
 
     <div class="temp">임시 디비젼</div>
 
@@ -177,7 +224,23 @@
     <!-- ================= -->
   </main>
   <footer class="footer">
-
+    <div class="footer__connect">
+      <h2 class="footer__connect-heading">Connect With Us</h2>
+      <address class="footer__connect-item">Ajangs@gmail.com</address>
+    </div>
+    <div class="footer__support">
+      <h2 class="footer__support-heading">Support Us</h2>
+      <p class="footer__support-item">Find out more about how you can support our work here</p>
+    </div>
+    <div class="footer__follow">
+      <h2 class="footer__follow-heading">Follow Us</h2>
+      <ul class="footer__follow-list">
+        <li class="footer__follow-item"><a href="#">Faceook</a></li>
+        <li class="footer__follow-item"><a href="#">Instagram</a></li>
+        <li class="footer__follow-item"><a href="#">Twitter</a></li>
+        <li class="footer__follow-item"><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
   </footer>
 
 
@@ -187,6 +250,7 @@
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src='src/js/index.js'></script>
 </body>
+<script src="./src/js/main.js"></script>
 
 
 </html>
