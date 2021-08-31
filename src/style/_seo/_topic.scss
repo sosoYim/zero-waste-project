@@ -1,9 +1,10 @@
-@use '../utils'as *;
+@use '../utils' as *;
 
 .temp {
     background-color: pink;
     height: 100vh;
-    z-index: 10;
+    position: relative;
+    z-index: 30;
 }
 
 .topic {
@@ -97,12 +98,12 @@
 
         &--eng {
             font-weight: 700;
-            font-size: rem(40px);
+            font-size: rem(100px);
             text-align: left;
         }
 
         &--emp{
-            font-size: rem(100px);
+            font-size: rem(400px);
         }
 
         &--kor {
