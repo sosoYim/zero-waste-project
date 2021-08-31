@@ -4,6 +4,21 @@
     position: relative;
     overflow: hidden;
     height: 100vh;
+
+    &__heading {
+        position: absolute;
+        top: 20%;
+        padding: rem(20px);
+        display: block;
+        width: 100%;
+        font-family: 'Bebas Neue';
+        font-size: rem(120px);
+        & span {
+            display: block;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    }
     &__background {
         display: inline-block;
         width: 100vw;

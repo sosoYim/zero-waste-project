@@ -1,3 +1,4 @@
+let header = document.querySelector(".header");
 let headerWrapper = document.querySelector(".header__wrapper");
 let logo = document.querySelector(".logo");
 let button = document.querySelector(".header__menu-button");
@@ -27,7 +28,7 @@ button.addEventListener(
     }, 800);
     setTimeout(() => {
       footer.classList.add("is-active");
-    }, 3000);
+    }, 2000);
   },
   false
 );
@@ -54,11 +55,13 @@ document.addEventListener("scroll", (e) => {
     for (let bar of buttonBurgerBar) {
       bar.classList.add("button--burger__bar-color");
     }
+    header.classList.add("nav-slideUp");
   } else {
     headerWrapper.classList.remove("text-color");
     headerMenuButton.classList.remove("text-color");
     for (let bar of buttonBurgerBar) {
       bar.classList.remove("button--burger__bar-color");
     }
+    header.classList.remove("nav-slideUp");
   }
 });

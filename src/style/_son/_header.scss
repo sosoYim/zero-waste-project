@@ -1,5 +1,10 @@
 @use '../utils/' as *;
 
+// 스크롤 실험용
+html {
+    scroll-behavior: smooth;
+}
+
 .header {
     position: fixed;
     box-sizing: border-box;
@@ -155,6 +160,9 @@
 
 
 // JS로 조절하는 클래스
+.nav-slideUp {
+    background: none;
+}
 .block {
     display: block;
 }
