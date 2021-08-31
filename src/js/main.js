@@ -55,3 +55,32 @@ document.addEventListener("scroll", (e) => {
     }
   }
 });
+
+
+// ======================== topic 섹션 js ========================
+
+(function($) {
+  var s,
+  clippy = {
+    settings: {
+      heading: $('.topic__slogan'),
+    },
+    init: function() {
+      s = this.settings;
+      this.bindEvents();
+    },
+    bindEvents: function(){
+      $(window).on("load resize scroll", $.proxy(this.getClippy, this));
+    },
+
+    getClippy: function(){
+        s.heading.each(function() {
+          var layerOffset = $(this).closest('.topic__items').offset(),
+              containerOffset = layerOffset.top - $(window).scrollTop(),
+              clippy = containerOffset - $(this).css("top").replace(/[^-\d\.]/g, '') - $(this).css("margin-top").replace(/[^-\d\.]/g, '');
+          $(this).css('clip', 'rect('+ clippy +'px, auto, auto, auto)');
+        });
+    },
+  };
+   clippy.init();
+})(jQuery);
