@@ -5,3 +5,4 @@ Azang's first mini project : zero-waste
 
 My name is wonjae
 git test : sosoyim
+git practice - 혜연
