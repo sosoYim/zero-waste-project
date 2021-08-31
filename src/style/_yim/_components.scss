@@ -1,7 +1,7 @@
 @use './../utils' as *;
 
 // STATUS components==============
-.activate{
+.is-active{
     display: block !important;
 }
 .desactivate{
@@ -20,41 +20,27 @@
     border-radius: rem(4px);
 }
 
-// range
-@mixin range($bgTrack: $primary, $bgThumb: $primary, $thumbSizePx: 50px){
-    input[type=range]{
-        -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-        width: 100%; /* Specific width is required for Firefox. */
-        background: transparent; /* Otherwise white in Chrome */
-    
-        background-color: $bgTrack;
-        border-radius: rem(3px);
-        height: rem(12px);
-        margin-bottom: rem($thumbSizePx);
-    }
-    input[type=range]::-webkit-slider-thumb {
-        //::-moz-range-thumb, ::-ms-thumb 둘다 해줘야 함
-        -webkit-appearance: none;
-        appearance: none;
-        height: rem($thumbSizePx);
-        width: rem($thumbSizePx);
-        background-color: $bgThumb;
-        border-radius: 50%;
-    }
-    
-    input[type=range]:focus {
-        outline: none;
-        // border: 1px solid pink;
-    }
-}
-
+// START MBTI CUSTOM ==========================================
 .mbti{
     @include autoMargin;
-    @include range;
-    width: 45vw;
-    background-color: yellow;
+    overflow: hidden;
+
+    width: 40vw;
+    min-width: rem(767px);
+    height: 70vh;
+    min-height: rem(660px);
+    background-color: purple;
     text-align: center;
     padding: rem(32px);
+    //center
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include mobile{
+        width: 100%;
+    }
 
     //start page
     &__heading{
@@ -67,17 +53,30 @@
         font-size: rem(32px);
     }
     &__survey{
-        display: none;
         height: 100%;
     }
-
-    &__radioInput{
+    // 페이지 게이지
+    // &__range{
+    //     width: 100%;
+    //     height: 20%;
+    // }
+    // 질문지
+    // TODO:atroot
+    &__field{
         background-color: pink;
         width: 100%;
+        // height: 80%;
         display: none;
         position: relative;
+        &--activate{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
         &__q{
+            position: absolute;
             font-size: rem(32px);
+            top: 0;
         }
         &__radio{
             appearance: none;
@@ -92,7 +91,36 @@
             border-radius: rem(8px);
             background-color: $primary;
             color: $white;
+            margin-top: rem(16px);
         }   
         
+    }
+
+    &__bg-wave{
+        background-image: url("../../src/images/mbti-bg-wave.svg");
+        background-size: 250%;
+
+        position: absolute;
+        top: 25%;
+        left: -50%;
+        // transform: translateX(50%);
+        width: 100vw;
+        padding: 0;
+        background-color: red;
+        //animation: waves 6s alternate infinite;
+
+        &--deepblue{
+            fill: $primary;
+        }
+
+    }
+
+    @keyframes waves {
+        0%{
+            transform: translateX(-25%);
+        }
+        100%{
+            transform: translateX(75%);
+        }
     }
 }
