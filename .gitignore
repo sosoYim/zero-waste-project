@@ -1,6 +1,5 @@
 node_modules/
 css/
-src/images/
 src/js/
 .DS_Store
 _index_copy.scss
