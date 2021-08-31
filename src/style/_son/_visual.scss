@@ -1,0 +1,28 @@
+@use '../utils/' as *;
+
+.visual {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    &__background {
+        display: inline-block;
+        width: 100vw;
+        height: 100%;
+        @include mobile {
+            background: url('../../src/images/visual__background.png') no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+        }
+        @include desktop {
+            background: url('../../src/images/visual__background2X.png') no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+        }
+    }
+}
+
+.blank {
+    width: 100%;
+    height: 1000px;
+    background: $bg-color;
+}
