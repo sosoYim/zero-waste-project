@@ -6,6 +6,7 @@ let headerMenuButton = document.querySelector(".header__menu-button");
 let buttonBurgerBar = document.querySelectorAll(".button--burger__bar");
 let headerNav = document.querySelector(".header__nav");
 let navClose = document.querySelector(".nav__close");
+let footer = document.querySelector(".footer");
 
 // 메뉴 클릭 이벤트
 button.addEventListener(
@@ -24,6 +25,9 @@ button.addEventListener(
     setTimeout(() => {
       headerNav.classList.add("block");
     }, 800);
+    setTimeout(() => {
+      footer.classList.add("is-active");
+    }, 3000);
   },
   false
 );
@@ -32,10 +36,13 @@ button.addEventListener(
 navClose.addEventListener("click", (e) => {
   e.preventDefault;
   headerNav.classList.add("nav-disappear");
+  footer.classList.add("nav-disappear");
   setTimeout(() => {
     headerNav.classList.remove("is-active");
+    footer.classList.remove("is-active");
     headerNav.classList.remove("block");
     headerNav.classList.remove("nav-disappear");
+    footer.classList.remove("nav-disappear");
   }, 400);
 });
 
