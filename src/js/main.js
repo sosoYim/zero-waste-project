@@ -3,9 +3,25 @@
 //======================================
 // let mbtiRange = document.getElementById("mbtiRange");
 // let curPage = mbtiRange.value;
-console.log("hi");
 //all radios
-//const radios = document.querySelectorAll('input[class="radioInput__radio"]');
+const radios = document.querySelectorAll('input[class="field__radio"]');
+let result = 0;
+const resultValue = document.getElementById("resultValue");
+// radio 선택으로 페이지 이동
+radios.forEach(function(elem) {
+    elem.addEventListener("click", function() {
+      //라디오 버튼 값이 변하면
+      //네비게이션 값 바꿔주기
+      let curNum = parseInt(elem.getAttribute("name"));
+      let nextNum = curNum +1;
+      document.getElementById(`mbti-${curNum}`).classList.remove('is-flex-active');
+      document.getElementById(`mbti-${nextNum}`).classList.add('is-flex-active');
+
+      result += parseInt(elem.getAttribute("value"));
+      resultValue.value = result;
+      console.log(`resultValue.value : ${resultValue.value}`);
+    });
+});
 
 
 // // dont touch
@@ -22,18 +38,6 @@ console.log("hi");
 // // range에서 페이지 이동
 // mbtiRange.addEventListener('input', showPageFromRange);
 
-// radio 선택으로 페이지 이동
-// radios.forEach(function(elem) {
-//     elem.addEventListener("click", function() {
-//         //라디오 버튼 값이 변하면
-//         //네비게이션 값 바꿔주기
-//         let nextPage = parseInt(elem.getAttribute("name")) +1;
-
-//         mbtiRange.value = nextPage;
-
-//         showPageFromRange();
-//     });
-// });
 
 //======================================
 //    YIM END

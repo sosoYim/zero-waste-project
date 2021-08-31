@@ -9,23 +9,55 @@
   <link rel="stylesheet" href="./css/style/index.css">
 </head>
 <body>
-    <!-- ================= -->
-    <!--          son      -->
-    <!-- ================= -->
     <header class="header">
 
+    <!-- 헤더 Wrapper -->
+    <div class="header__wrapper">
+        <h1 class="logo"><a href="#">Zero-Waste</a></h1>
+        <div class="header__menu">
+        <a href="#" class="header__menu-staff">Staff</a>
+        <button class="header__menu-button">
+            Menu
+            <div class="button--burger">
+            <span class="button--burger__bar"></span>
+            <span class="button--burger__bar"></span>
+            </div>
+        </button>
+        </div>
+    </div>
+
+    <!-- 네비게이션 -->
+    <nav class="header__nav">
+        <div class="header__nav-inner">
+        <h2 class="header__nav-heading">Let's Together!</h2>
+        <ul class="header__nav-list">
+            <li class="header__nav-item our-team"><a class="header__nav-link" href="#">Our Team</a></li>
+            <li class="header__nav-item news-views"><a class="header__nav-link" href="#">News & Views</a></li>
+            <li class="header__nav-item making-firm"><a class="header__nav-link" href="#">Making Firm</a></li>
+            <li class="header__nav-item support-us"><a class="header__nav-link" href="#">Support Us</a></li>
+        </ul>
+        <!-- 수정 -->
+        <button class="nav__close"><span>×</span></button>
+        </div>
+    </nav>
     </header>
 
     <main>
+        <!-- 치고올라오는 물결 -->
+        <div class="first-access first-access-effect--1"></div>
+        <div class="first-access first-access-effect--2"></div>
+        <div class="first-access first-access-effect--3"></div>
         <!-- mbti 결과 -->
         <section class="mbti-r">
             <h2 class="mbti-r__heading a11yHidden">나의 제로웨이스트력 결과</h2>
             <div class="mbti-r__container">
-            <dl class="mbti-r__iam">
-                <dt>당신은...</dt>
-                <dd>지구의 <strong>바퀴벌레</strong></dd>
-            </dl>
-            <img src="" alt="바퀴벌레" class="mbti-r__image">
+            <div class="mbti-r__result">
+                <p>
+                    <span>지구는 당신을...</span>
+                    <span><strong>바퀴벌레</strong>라고 생각합니다.</span>
+                </p>
+                <img src="./src/images/mbti-penguin.png" alt="바퀴벌레" class="mbti-r__image">
+            </div>
             <ul class="mbti-r__list">
                 <li>블라블라</li>
                 <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem culpa earum, voluptatum veritatis sapiente id consequuntur autem doloremque expedita ipsam ex quis perspiciatis vero voluptatem ratione tempora voluptas laborum aliquid.</li>

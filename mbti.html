@@ -9,11 +9,37 @@
   <link rel="stylesheet" href="./css/style/index.css">
 </head>
 <body>
-    <!-- ================= -->
-    <!--          son      -->
-    <!-- ================= -->
     <header class="header">
 
+    <!-- 헤더 Wrapper -->
+    <div class="header__wrapper">
+        <h1 class="logo"><a href="#">Zero-Waste</a></h1>
+        <div class="header__menu">
+        <a href="#" class="header__menu-staff">Staff</a>
+        <button class="header__menu-button">
+            Menu
+            <div class="button--burger">
+            <span class="button--burger__bar"></span>
+            <span class="button--burger__bar"></span>
+            </div>
+        </button>
+        </div>
+    </div>
+
+    <!-- 네비게이션 -->
+    <nav class="header__nav">
+        <div class="header__nav-inner">
+        <h2 class="header__nav-heading">Let's Together!</h2>
+        <ul class="header__nav-list">
+            <li class="header__nav-item our-team"><a class="header__nav-link" href="#">Our Team</a></li>
+            <li class="header__nav-item news-views"><a class="header__nav-link" href="#">News & Views</a></li>
+            <li class="header__nav-item making-firm"><a class="header__nav-link" href="#">Making Firm</a></li>
+            <li class="header__nav-item support-us"><a class="header__nav-link" href="#">Support Us</a></li>
+        </ul>
+        <!-- 수정 -->
+        <button class="nav__close"><span>×</span></button>
+        </div>
+    </nav>
     </header>
 
     <main>
@@ -22,7 +48,7 @@
             <!-- <img class="mbti-bg__bear" src="../../src/images/swimm-bear.png"> -->
 
             <h2 class="a11yHidden">제로 웨이스트 점수 질문지</h2>
-            <form action="" class="mbti__survey">
+            <form action="" class="mbti__survey" method="post">
                 <!-- <label for="mbtiRange" class="a11yHidden">현재 페이지</label>
                 <progress type="progress" class="" name="page" id="mbtiRange" min="1" max="4" value="1">1/12문제</progress> -->
                 <fieldset class="mbti__field field is-flex-active" id="mbti-1">
@@ -49,9 +75,10 @@
                     <label for="q3R2" class="field__label">식물성 천연 수세미를 사용해요.</label>
                     <input type="radio" name="3" id="q3R2" value="3" class="field__radio" required/>
                 </fieldset>
+                <input type="hidden" name="result" value="0" id="resultValue"/>
                 <div class="mbti__field field" id="mbti-4">
-                    <button class="button">결과 보기</button>
-                    결과결과
+                    <!-- TODO: php form으로 만들기 -->
+                    <a class="button" id="getResult" href="./mbti-r.html?result=1">결과 보기</a>
                 </div>
             </form>
             <!-- <img class="mbti__bg-wave--deepblue" src="../../src/images/mbti-bg-wave.svg"></img> -->
