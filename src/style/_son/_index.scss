@@ -1,1 +1,5 @@
-// @forward '내부 파일경로';
+@forward './header';
+@forward './wave';;
+@forward './visual';
+@forward './intro-effect';
+@forward './footer';

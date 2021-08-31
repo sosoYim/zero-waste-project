@@ -1,4 +1,6 @@
-
+//======================================
+//    YIM START
+//======================================
 let mbtiRange = document.getElementById("mbtiRange");
 let curPage = mbtiRange.value;
 console.log(curPage)
@@ -6,7 +8,7 @@ console.log(curPage)
 const radios = document.querySelectorAll('input[class="radioInput__radio"]');
 
 
-// dont touch=============================================
+// dont touch
 function showPageFromRange(){
     let page = mbtiRange.value;
     const prevRadioInput = document.getElementById(`mbti-${curPage}`);
@@ -32,3 +34,72 @@ radios.forEach(function(elem) {
         showPageFromRange();
     });
 });
+
+//======================================
+//    YIM END
+//======================================
+
+//======================================
+//    SON START
+//======================================
+
+let headerWrapper = document.querySelector(".header__wrapper");
+let logo = document.querySelector(".logo");
+let button = document.querySelector(".header__menu-button");
+let waveEffect = document.querySelectorAll(".first-access");
+let headerMenuButton = document.querySelector(".header__menu-button");
+let buttonBurgerBar = document.querySelectorAll(".button--burger__bar");
+let headerNav = document.querySelector(".header__nav");
+let navClose = document.querySelector(".nav__close");
+
+// 메뉴 클릭 이벤트
+button.addEventListener(
+  "click",
+  (e) => {
+    e.preventDefault;
+    headerNav.classList.add("is-active");
+    for (let i = 1; i <= waveEffect.length; i++) {
+      waveEffect[i - 1].classList.remove(`first-access-effect--${i}`);
+    }
+    setTimeout(() => {
+      for (let i = 1; i <= waveEffect.length; i++) {
+        waveEffect[i - 1].classList.add(`first-access-effect--${i}`);
+      }
+    }, 200);
+    setTimeout(() => {
+      headerNav.classList.add("block");
+    }, 800);
+  },
+  false
+);
+
+// 메뉴 닫기 클릭 이벤트
+navClose.addEventListener("click", (e) => {
+  e.preventDefault;
+  headerNav.classList.add("nav-disappear");
+  setTimeout(() => {
+    headerNav.classList.remove("is-active");
+    headerNav.classList.remove("block");
+    headerNav.classList.remove("nav-disappear");
+  }, 400);
+});
+
+// 스크롤 이벤트
+document.addEventListener("scroll", (e) => {
+  if (scrollY > screen.height - 398) {
+    headerWrapper.classList.add("text-color");
+    headerMenuButton.classList.add("text-color");
+    for (let bar of buttonBurgerBar) {
+      bar.classList.add("button--burger__bar-color");
+    }
+  } else {
+    headerWrapper.classList.remove("text-color");
+    headerMenuButton.classList.remove("text-color");
+    for (let bar of buttonBurgerBar) {
+      bar.classList.remove("button--burger__bar-color");
+    }
+  }
+});
+//======================================
+//    SON END
+//======================================
