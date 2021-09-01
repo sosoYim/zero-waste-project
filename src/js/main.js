@@ -1,3 +1,32 @@
+//======================================
+//    YIM START
+//======================================
+//all radios
+const radios = document.querySelectorAll('input[class="field__radio"]');
+let result = 0;
+const resultValue = document.getElementById("resultValue");
+// radio 선택으로 페이지 이동
+radios.forEach(function(elem) {
+    elem.addEventListener("click", function() {
+      //라디오 버튼 값이 변하면
+      //네비게이션 값 바꿔주기
+      let curNum = parseInt(elem.getAttribute("name"));
+      let nextNum = curNum +1;
+      document.getElementById(`mbti-${curNum}`).classList.remove('is-flex-active');
+      document.getElementById(`mbti-${nextNum}`).classList.add('is-flex-active');
+
+      result += parseInt(elem.getAttribute("value"));
+      resultValue.value = result;
+      console.log(`resultValue.value : ${resultValue.value}`);
+    });
+});
+//======================================
+//    YIM END
+//======================================
+
+//======================================
+//    SON START
+//======================================
 let header = document.querySelector(".header");
 let headerWrapper = document.querySelector(".header__wrapper");
 let logo = document.querySelector(".logo");
@@ -64,40 +93,4 @@ document.addEventListener("scroll", (e) => {
     headerWrapper.classList.add("header-hide");
     header.classList.add("nav-slideUp");
   }
-  window.__scrollPosition = document.documentElement.scrollTop || 0;
 });
-
-// ======================== topic 섹션 js ========================
-
-(function ($) {
-  var s,
-    clippy = {
-      settings: {
-        heading: $(".topic__slogan"),
-      },
-      init: function () {
-        s = this.settings;
-        this.bindEvents();
-      },
-      bindEvents: function () {
-        $(window).on("load resize scroll", $.proxy(this.getClippy, this));
-      },
-
-      getClippy: function () {
-        s.heading.each(function () {
-          var layerOffset = $(this).closest(".topic__items").offset(),
-            containerOffset = layerOffset.top - $(window).scrollTop(),
-            clippy =
-              containerOffset -
-              $(this)
-                .css("top")
-                .replace(/[^-\d\.]/g, "") -
-              $(this)
-                .css("margin-top")
-                .replace(/[^-\d\.]/g, "");
-          $(this).css("clip", "rect(" + clippy + "px, auto, auto, auto)");
-        });
-      },
-    };
-  clippy.init();
-})(jQuery);
