@@ -2,44 +2,49 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zero-Waste</title>
-  <link rel="stylesheet" href="./css/style/index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero-Waste</title>
+    <link rel="stylesheet" href="./css/style/index.css">
 </head>
+
 <body>
     <header class="header">
 
-    <!-- 헤더 Wrapper -->
-    <div class="header__wrapper">
-        <h1 class="logo"><a href="./index.html">Zero-Waste</a></h1>
-        <div class="header__menu">
-        <a href="#" class="header__menu-staff">Staff</a>
-        <button class="header__menu-button">
-            Menu
-            <div class="button--burger">
-            <span class="button--burger__bar"></span>
-            <span class="button--burger__bar"></span>
+        <!-- 헤더 Wrapper -->
+        <div class="header__wrapper">
+            <h1 class="logo"><a href="#">Zero-Waste</a></h1>
+            <div class="header__menu">
+                <a href="#" class="header__menu-staff">Staff</a>
+                <button class="header__menu-button">
+                    Menu
+                    <div class="button--burger">
+                        <span class="button--burger__bar"></span>
+                        <span class="button--burger__bar"></span>
+                    </div>
+                </button>
             </div>
-        </button>
         </div>
-    </div>
 
-    <!-- 네비게이션 -->
-    <nav class="header__nav">
-        <div class="header__nav-inner">
-        <h2 class="header__nav-heading">Let's Together!</h2>
-        <ul class="header__nav-list">
-            <li class="header__nav-item our-team"><a class="header__nav-link" href="#">Our Team</a></li>
-            <li class="header__nav-item news-views"><a class="header__nav-link" href="#">News & Views</a></li>
-            <li class="header__nav-item making-firm"><a class="header__nav-link" href="#">Making Firm</a></li>
-            <li class="header__nav-item support-us"><a class="header__nav-link" href="#">Support Us</a></li>
-        </ul>
-        <!-- 수정 -->
-        <button class="nav__close"><span>×</span></button>
-        </div>
-    </nav>
+        <!-- 네비게이션 -->
+        <nav class="header__nav">
+            <div class="header__nav-inner">
+                <h2 class="header__nav-heading">Let's Together!</h2>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item home"><a class="header__nav-link" href="/index.html">Home</a></li>
+                    <li class="header__nav-item news-views"><a class="header__nav-link" href="#">News & Views</a></li>
+                    <li class="header__nav-item your-mbti"><a class="header__nav-link" href="/mbti.html">Zero MBTI</a>
+                    </li>
+                    <li class="header__nav-item support-us"><a class="header__nav-link" href="/supportUs.html">Support
+                            Us</a></li>
+                </ul>
+                <!-- 수정 -->
+                <button class="nav__close"><span>×</span></button>
+            </div>
+        </nav>
+
+
     </header>
 
     <main>
@@ -70,10 +75,18 @@
             <h2 class="a11yHidden">나의 결과 공유하기</h2>
             <div class="mbti-r__share">
                 <!-- 인스타(mbti-r__share__insta), 페이스북, ... IR, 스프라이트 기법 사용 -->
-                <button type="button" class="buttonNone"><div class="sprite sprite--kakao trick-indent">카카오로 공유</div></button> 
-                <button type="button" class="buttonNone"><div class="sprite sprite--insta trick-indent">인스타로 공유</div></button>
-                <button type="button" class="buttonNone"><div class="sprite sprite--fb trick-indent">페이스북으로 공유</div></button>                   
-                <button type="button" class="buttonNone"><div class="sprite sprite--download trick-indent">로컬에 저장</div></button>
+                <button type="button" class="buttonNone">
+                    <div class="sprite sprite--kakao trick-indent">카카오로 공유</div>
+                </button>
+                <button type="button" class="buttonNone">
+                    <div class="sprite sprite--insta trick-indent">인스타로 공유</div>
+                </button>
+                <button type="button" class="buttonNone">
+                    <div class="sprite sprite--fb trick-indent">페이스북으로 공유</div>
+                </button>
+                <button type="button" class="buttonNone">
+                    <div class="sprite sprite--download trick-indent">로컬에 저장</div>
+                </button>
             </div>
             <a class="button mbti-r__again" href="./mbti.html">테스트 다시하기</a>
             <a class="button mbti-r__again" href="./supportUs.html">응원하기</a>
@@ -83,6 +96,7 @@
     <footer class="footer">
 
     </footer>
-    <script src="./src/js/main.js"></script>
+    <script src="./src/js/getResult.js"></script>
 </body>
+
 </html>
