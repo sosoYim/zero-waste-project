@@ -23,3 +23,12 @@
     #{$width}: 100%;
     height: auto;
 }
+
+// 폰트 스타일
+@mixin fontStyles($fontSize, $fontWeight: 400, $lineHeight: inherit, $color: inherit){
+    font-size: rem($fontSize);
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+    color: $color;
+    @content;
+}
