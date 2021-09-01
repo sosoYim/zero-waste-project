@@ -18,6 +18,10 @@
     background-color: #FFF;
     font-weight: 400;
 
+    &__heading{
+        @include a11yHidden;
+    }
+
 
     &__container{
         scroll-snap-type: y mandatory;
