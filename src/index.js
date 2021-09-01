@@ -1,1 +1,4 @@
-import './style/index.scss';
+import "./style/index.scss";
+import "./js/main";
+import "./js/scroll";
+import "./js/support";
