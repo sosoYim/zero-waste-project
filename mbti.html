@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero-Waste</title>
+  <link rel="stylesheet" href="./css/style/index.css">
+</head>
+<body>
+    <header class="header">
+
+    <!-- 헤더 Wrapper -->
+    <div class="header__wrapper">
+        <h1 class="logo"><a href="#">Zero-Waste</a></h1>
+        <div class="header__menu">
+        <a href="#" class="header__menu-staff">Staff</a>
+        <button class="header__menu-button">
+            Menu
+            <div class="button--burger">
+            <span class="button--burger__bar"></span>
+            <span class="button--burger__bar"></span>
+            </div>
+        </button>
+        </div>
+    </div>
+
+    <!-- 네비게이션 -->
+    <nav class="header__nav">
+        <div class="header__nav-inner">
+        <h2 class="header__nav-heading">Let's Together!</h2>
+        <ul class="header__nav-list">
+            <li class="header__nav-item our-team"><a class="header__nav-link" href="#">Our Team</a></li>
+            <li class="header__nav-item news-views"><a class="header__nav-link" href="#">News & Views</a></li>
+            <li class="header__nav-item making-firm"><a class="header__nav-link" href="#">Making Firm</a></li>
+            <li class="header__nav-item support-us"><a class="header__nav-link" href="#">Support Us</a></li>
+        </ul>
+        <!-- 수정 -->
+        <button class="nav__close"><span>×</span></button>
+        </div>
+    </nav>
+    </header>
+
+    <main>
+        <!-- mbti 질문지 -->
+        <section class="mbti">
+            <h2 class="a11yHidden">제로 웨이스트 점수 질문지</h2>
+            <form action="" class="mbti__survey" method="post">
+                <fieldset class="mbti__field field is-flex-active" id="mbti-1">
+                    <legend class="a11yHidden">1번 문제</legend>
+                    <p class="field__q">음료를 마실 때</p>
+                    <label for="q1R1" class="field__label">플라스틱 일회용 빨대를 사용해요.</label>
+                    <input type="radio" name="1" id="q1R1" value="1" class="field__radio" required/>
+                    <label for="q1R2" class="field__label">유리, 스테인리스 재질의 다회용 빨대를 사용해요.</label>
+                    <input type="radio" name="1" id="q1R2" value="2" class="field__radio" required/>
+                </fieldset>
+                <fieldset class="mbti__field field" id="mbti-2">
+                    <legend class="a11yHidden">2번 문제</legend>
+                    <div class="field__q">설거지를 할 때</div>
+                    <label for="q2R1" class="field__label">플라스틱 섬유로 만든 수세미를 사용해요.</label>
+                    <input type="radio" name="2" id="q2R1" value="1" class="field__radio" required/>
+                    <label for="q2R2" class="field__label">식물성 천연 수세미를 사용해요.</label>
+                    <input type="radio" name="2" id="q2R2" value="3" class="field__radio" required/>
+                </fieldset>
+                <fieldset class="mbti__field field" id="mbti-3">
+                    <legend class="a11yHidden">3번 문제</legend>
+                    <div class="field__q">333334545</div>
+                    <label for="q3R1" class="field__label">플라스틱 섬유로 만든 수세미를 사용해요.</label>
+                    <input type="radio" name="3" id="q3R1" value="1" class="field__radio" required/>
+                    <label for="q3R2" class="field__label">식물성 천연 수세미를 사용해요.</label>
+                    <input type="radio" name="3" id="q3R2" value="3" class="field__radio" required/>
+                </fieldset>
+                <input type="hidden" name="result" value="0" id="resultValue"/>
+                <div class="mbti__field field" id="mbti-4">
+                    <!-- TODO: php form으로 만들기 -->
+                    <a class="button" id="getResult" href="./mbti-r.html?result=1">결과 보기</a>
+                </div>
+            </form>
+            <!-- <img class="mbti__bg-wave--deepblue" src="../../src/images/mbti-bg-wave.svg"></img> -->
+        </section>
+        <div class="mbti-bg">
+            <div class="visual__ocean mbti-bg__wave">
+                <img class="mbti-bg__bear" src="../../src/images/swimm-bear.png">
+                <div class="visual__wave"></div>
+                <div class="visual__wave wave-effect2"></div>
+                <div class="visual__wave wave-effect3"></div>
+                <div class="visual__wave wave-effect4"></div>
+            </div> 
+        </div>
+    </main>
+    <footer class="footer">
+
+    </footer>
+    <script src="./src/js/main.js"></script>
+</body>
+</html>

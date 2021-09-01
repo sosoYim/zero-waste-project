@@ -1,3 +1,33 @@
+//======================================
+//    YIM START
+//======================================
+//all radios
+const radios = document.querySelectorAll('input[class="field__radio"]');
+let result = 0;
+const resultValue = document.getElementById("resultValue");
+// radio 선택으로 페이지 이동
+radios.forEach(function(elem) {
+    elem.addEventListener("click", function() {
+      //라디오 버튼 값이 변하면
+      //네비게이션 값 바꿔주기
+      let curNum = parseInt(elem.getAttribute("name"));
+      let nextNum = curNum +1;
+      document.getElementById(`mbti-${curNum}`).classList.remove('is-flex-active');
+      document.getElementById(`mbti-${nextNum}`).classList.add('is-flex-active');
+
+      result += parseInt(elem.getAttribute("value"));
+      resultValue.value = result;
+      console.log(`resultValue.value : ${resultValue.value}`);
+    });
+});
+//======================================
+//    YIM END
+//======================================
+
+//======================================
+//    SON START
+//======================================
+
 let headerWrapper = document.querySelector(".header__wrapper");
 let logo = document.querySelector(".logo");
 let button = document.querySelector(".header__menu-button");
