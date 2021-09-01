@@ -1,53 +1,61 @@
 gsap.registerPlugin(ScrollTrigger);
 
-const showEl = gsap.utils.toArray('.state__heading')
-showEl.forEach((text, i) => {
-  ScrollTrigger.create({
-    trigger: text,
-    toggleClass: 'show',
-    start: "top center",
-    end: "bottom -100%",
-  }), 
-  ScrollTrigger.create({
-    trigger: text,
-    toggleClass: 'is-active',
-    start: "top center",
-    end: "bottom -100%",
-  })
-})
+gsap.to('.state__heading', {
+  scrollTrigger: {
+    trigger: ".state__heading",
+    start: "-5% center",
+    end: "80% 20%",
+    toggleClass: {
+      targets: ".state__heading",
+      className: "show"
+    }
+  },
+});
+
+gsap.to('.state__content', {
+  scrollTrigger: {
+    trigger: ".state__content",
+    start: "-5% center",
+    end: "80% top",
+    toggleClass: {
+      targets: ".state__image",
+      className: "show"
+    }
+  },
+});
 
 gsap.to(".state__content", {
   scrollTrigger: {
+    markers: "true",
     trigger: ".state__content",
     scrub: true,
     pin: true,
     start: "center center",
-    end: "bottom -100%",
+    end: "center top",
     toggleClass: "is-active",
-    ease: "power2"
-  },
+    ease: "power2",
+  }
 });
 
 gsap.to(".state__image img", {
   scrollTrigger: {
     trigger: ".state__content",
-    scrub: 0.5,
+    scrub: 2,
     start: "top bottom",
     end: "bottom -300%",
-    ease: "power2"
+    ease: "power2",
   },
   y: "-30%"
 });
 
-const showVideo = gsap.utils.toArray('.state__desc-wrapper')
-showVideo.forEach((text, i) => {
-  ScrollTrigger.create({
-    trigger: text,
+gsap.to(".state__desc-wrapper", {
+  scrollTrigger: {
+    trigger: ".state__desc-wrapper",
     toggleClass: 'show',
     start: "top center",
     end: "bottom -100%",
-  })
-})
+  },
+});
 
 
 // let el = [...document.querySelectorAll('.intro__state')]
