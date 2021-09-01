@@ -26,7 +26,6 @@ gsap.to('.state__content', {
 
 gsap.to(".state__content", {
   scrollTrigger: {
-    markers: "true",
     trigger: ".state__content",
     scrub: true,
     pin: true,
