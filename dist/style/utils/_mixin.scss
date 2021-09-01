@@ -1,0 +1,25 @@
+// Auto Margin을 활용한 박스 가운데 정렬 ------------------------------------------------ /
+@mixin autoMargin($marginX: auto) {
+    margin-left: $marginX;
+    margin-right: $marginX;
+}
+
+// 요소 박스의 최대 크기 설정 ----------------------------------------------------------- /
+@mixin boxSizeMax($width: 1000px, $paddingX: 0){
+    max-width: $width;
+    padding-left: $paddingX;
+    padding-right: $paddingX;
+    @include autoMargin();
+    @content;
+}
+
+//100% 넓이를 차지한다. width 설정시 최대 넓이 지정 가능.
+@mixin boxSizeFull($width){
+    width: 100%;
+    max-width: $width;
+}
+// 반응형 미디어 ----------------------------------------------------------- /
+@mixin responsive($width: max-width){
+    #{$width}: 100%;
+    height: auto;
+}

@@ -1,0 +1,58 @@
+@use '../utils/' as *;
+
+$first: '0C2331';
+$second: 'FFFFFF';
+$third: 'F0F7FB';
+
+.first-access {
+    position: fixed;
+    left: calc(50vw - 1200px);
+    width: 2400px;
+    height: 198px;
+}
+
+.first-access-effect {
+    &--1 {
+        bottom: -198px;
+        background-image: url("../../src/images/one-wave.svg");    
+        animation: upstream 8000ms ease-in-out forwards;
+        z-index: 2000;
+    }
+    &--2 {
+        bottom: -398px;
+        background-image: url("../../src/images/two-wave.svg");    
+        animation: upstream 8000ms ease-in-out forwards;
+        z-index: 3000;
+    }
+    &--3 {
+        bottom: -798px;
+        background-image: url("../../src/images/three-wave.svg");    
+        animation-delay: 400ms;
+        animation: upstream 8000ms ease-in-out forwards;
+        z-index: 4000;
+    }
+}
+
+
+@keyframes upstream {
+    0% {
+        transform: scaleX(.5);
+        -ms-transform: scaleX(.5);
+    }
+    15% {
+        transform: scaleX(2) scaleY(30);
+        -ms-transform: scaleX(2) scaleY(30);
+    }
+    30% {
+        transform: scaleX(3) scaleY(1.5);
+        -ms-transform: scaleX(3) scaleY(1.5);
+    }
+    60% {
+        transform: scaleY(.5);
+        -ms-transform: scaleY(.5);
+    }
+    100% {
+        transform: scaleX(6) scaleY(0);
+        -ms-transform: scaleX(6) scaleY(0);
+    }
+}
