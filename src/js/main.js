@@ -22,6 +22,28 @@ radios.forEach(function (elem) {
     console.log(`resultValue.value : ${resultValue.value}`);
   });
 });
+
+// 결과 페이지로 값 보내기
+const getResult = document.getElementById("getResult");
+getResult.addEventListener("click", function () {
+  let resultFinal;
+  if (result < 6) {
+    resultFinal = 1;
+  } else if (result < 11) {
+    resultFinal = 2;
+  } else if (result < 15) {
+    resultFinal = 3;
+  } else {
+    resultFinal = 4;
+  }
+  getResult.setAttribute("href", `./mbti-r-${resultFinal}.html`);
+});
+
+const resultTest = document.getElementById("resultTest").value;
+console.log(resultTest);
+
+//결과 페이지에서 값 받기
+
 //======================================
 //    YIM END
 //======================================
