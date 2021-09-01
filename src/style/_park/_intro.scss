@@ -1,19 +1,21 @@
 @use '../utils' as *;
 @use '../config' as *;
 
-.box {
-  width: 100%;
-  height: 100vh;
-  // background: linear-gradient($bg-color, $black);
-}
+// .box {
+//   width: 100%;
+//   height: 100vh;
+//   // background: linear-gradient($bg-color, $black);
+// }
 
-body {
-  // overflow-x: hidden;
-  background-color: $bg-color;
-  // background-color: $black;
-}
+// body {
+//   // overflow-x: hidden;
+//   background-color: $bg-color;
+//   // background-color: $black;
+// }
 
 .intro__state {
+  overflow: hidden;
+
   .state {
     &__heading {
       font-size: 5vmin;
@@ -62,7 +64,7 @@ body {
       position: absolute;
       content: "";
       width: 100%;
-      height: 100%;
+      height: 100vh;
       top: 0;
       left: 0;
       background-color: $black;
@@ -94,7 +96,7 @@ body {
       align-items: center;
       justify-content: center;
       width: 100%;
-      height: 100vh;
+      height: 100%;
       color: white;
       text-align: center;
       background-color: $bg-color;
@@ -104,6 +106,8 @@ body {
       @include flexbox(row, flex-start, center);
       width: 100%;
       height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto;
       background-color: $bg-color;
       position: relative;
       // padding: 2%;
@@ -226,7 +230,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   color: white;
   text-align: center;
 }
@@ -237,6 +241,66 @@ body {
 
 .intro__desc {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: $bg-color;
 }
+
+// 
+.intro__zero-waste {
+  @include flexbox(column, center, center);
+  max-width: 1200px;
+  // max-height: 100vh;
+  margin: 0 auto;
+  color: $text-color;
+  overflow: hidden;
+
+  @at-root .zero-waste {
+    &__img {
+      opacity: 0;
+      transform: translateX(150px);
+      background-color: lime;
+
+      >img {
+        width: 100%;
+        height: auto;
+        background-color: red;
+      }
+    }
+
+    &__title {
+      font-size: 5vw;
+      font-weight: 700;
+      margin-top: 3%;
+      opacity: 0;
+      transform: translateX(-150px);
+    }
+
+    &__desc {
+      font-size: 2vw;
+      line-height: 1.3;
+      margin-top: 5%;
+      opacity: 0;
+      transform: translateX(150px);
+    }
+  }
+
+  &.show .zero-waste__img {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1s;
+  }
+
+  &.show .zero-waste__title {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1.5s;
+  }
+
+  &.show .zero-waste__desc {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 2s;
+  }
+}
+
+// 
