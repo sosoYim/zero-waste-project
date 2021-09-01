@@ -37,6 +37,9 @@ getResult.addEventListener("click", function(){
   getResult.setAttribute("href", `./mbti-r-${resultFinal}.html`);
 });
 
+const resultTest = document.getElementById("resultTest").value;
+console.log(resultTest);
+
 //결과 페이지에서 값 받기
 
 
