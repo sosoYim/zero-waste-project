@@ -3,3 +3,9 @@
 @use './_seo';
 @use './_son';
 @use './_yim';
+
+@use './components';
+@use './config';
+@use './layout';
+@use './pages';
+@use './utils';

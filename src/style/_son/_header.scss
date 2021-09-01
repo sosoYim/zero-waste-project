@@ -1,4 +1,5 @@
-@use '../utils/' as *;
+@use '../utils' as *;
+@use '../config' as *;
 
 body {
     overflow-x: none;
@@ -135,7 +136,7 @@ body {
             }
         }
         &-item {
-            &.news-views, &.making-firm, &.support-us {
+            &.news-views, &.your-mbti, &.support-us {
                 margin-top: rem(32px);
                 @include mobile {
                     margin-top: rem(48px);

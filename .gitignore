@@ -1,6 +1,5 @@
 node_modules/
 css/
 .DS_Store
-_index_copy.scss
-.gitignore
-./.vscode/settings.json
+build/
+dist/
