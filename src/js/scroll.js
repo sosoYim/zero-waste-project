@@ -57,6 +57,18 @@ gsap.to(".state__desc-wrapper", {
 });
 
 
+gsap.to(".intro__zero-waste", {
+  scrollTrigger: {
+    trigger: ".intro__zero-waste",
+    toggleClass: 'show',
+    start: "top center",
+    end: "bottom -100%",
+  },
+});
+
+
+
+
 // let el = [...document.querySelectorAll('.intro__state')]
 
 // let options = {
