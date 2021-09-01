@@ -23,3 +23,32 @@
     #{$width}: 100%;
     height: auto;
 }
+
+
+// STATUS components==============
+// display 속성 변환
+@mixin is-active($display: block){
+    display: $display !important;
+}
+
+.is-active{
+    @include is-active();
+}
+
+.is-flex-active{
+    @include is-active(flex);
+}
+// .desactivate{
+//     display: none !important;
+// }
+
+//trick-indent로 글자 안보이게하기
+@mixin trick-indent {
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+}
+
+.trick-indent{
+    @include trick-indent();
+}
