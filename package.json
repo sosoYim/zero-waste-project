@@ -10,7 +10,8 @@
     "clear": "rimraf -rf build dist",
     "sass": "sass src:css",
     "watch": "npm run sass -- --watch",
-    "serve": "live-server --port=3000"
+    "serve": "live-server --port=3000",
+    "static": "npx live-server build"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,10 @@
   },
   "homepage": "https://github.com/jkpark104/zero-waste-project#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.2.0",
     "dotenv": "^10.0.0",
@@ -35,6 +40,8 @@
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
     "postcss-preset-env": "^6.7.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "rimraf": "^2.7.1",
     "sass": "^1.37.5",
     "sass-loader": "^12.1.0",

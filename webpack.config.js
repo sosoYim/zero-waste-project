@@ -1,22 +1,22 @@
-require('dotenv').config();
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+require("dotenv").config();
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
-const isDevelopment = process.env.NODE_ENV === 'development';
+const isDevelopment = process.env.NODE_ENV === "development";
 const paths = {
-  dist: 'dist',
-  build: 'build',
+  dist: "dist",
+  build: "build",
 };
 
 /* -------------------------------------------------------------------------- */
 
 module.exports = {
-  target: 'web',
-  mode: isDevelopment ? 'development' : 'production',
-  devtool: isDevelopment ? 'eval' : false,
+  target: "web",
+  mode: isDevelopment ? "development" : "production",
+  devtool: isDevelopment ? "eval" : false,
   devServer: {
     contentBase: path.resolve(__dirname, paths.dist),
     port: process.env.PORT,
@@ -26,13 +26,13 @@ module.exports = {
     hot: true,
   },
   entry: {
-    main: './src/index.js',
+    main: ["@babel/polyfill", "./src/js/main.js"],
   },
   output: {
-    publicPath: '/',
+    publicPath: "/",
     path: path.join(__dirname, isDevelopment ? paths.dist : paths.build),
-    filename: 'js/[name].bundle.js',
-    assetModuleFilename: 'images/[name][ext]',
+    filename: "js/[name].bundle.js",
+    assetModuleFilename: "images/[name][ext]",
   },
   module: {
     rules: [
@@ -40,26 +40,26 @@ module.exports = {
         test: /\.s(a|c)ss$/i,
         exclude: /node_modules/,
         use: [
-          isDevelopment ? 'style-loader' : MiniCSSExtractPlugin.loader,
+          isDevelopment ? "style-loader" : MiniCSSExtractPlugin.loader,
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               sourceMap: true,
               importLoaders: 2,
             },
           },
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               sourceMap: true,
               postcssOptions: {
                 plugins: [
                   [
-                    'postcss-preset-env',
+                    "postcss-preset-env",
                     {
                       stage: 3,
                       features: {
-                        'nesting-rules': true,
+                        "nesting-rules": true,
                       },
                       autoprefixer: { grid: true },
                     },
@@ -69,22 +69,22 @@ module.exports = {
             },
           },
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
               sourceMap: true,
             },
           },
         ],
-      }
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, './src/index.html'),
+      template: path.join(__dirname, "./index.html"),
     }),
     new MiniCSSExtractPlugin({
       linkType: false,
-      filename: 'css/style.css',
+      filename: "css/style.css",
     }),
   ],
 };
