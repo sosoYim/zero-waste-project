@@ -2,6 +2,9 @@
 
 .topic {
 
+    max-width: 1200px;
+    margin: 0 auto;
+
     &__heading {
         @include a11yHidden;
     }
@@ -9,6 +12,7 @@
     &__list {
         position: relative;
         height: 500vh;
+        max-width: 1200px;
     }
 
     &__items {
@@ -21,59 +25,73 @@
         overflow: hidden;
     }
 
-    &__items:nth-child(1) {
-        background-color: darkslateblue;
+    &__items:nth-child(1){
         top: 0;
     }
 
     &__items:nth-child(2) {
-        background-color: darkorchid;
         top: 100vh;
     }
 
     &__items:nth-child(3) {
-        background-color: darkseagreen;
         top: 200vh;
     }
 
     &__items:nth-child(4) {
-        background-color: darksalmon;
         top: 300vh;
     }
 
     &__items:nth-child(5) {
-        background-color: darkturquoise;
         top: 400vh;
+    }
+
+    &__items:nth-child(1) &__slogan--emp, &__items:nth-child(1) &__slogan--kor{
+        color: #FCD9DA;
+    }
+    &__items:nth-child(2) &__slogan--emp, &__items:nth-child(2) &__slogan--kor{
+        color: darksalmon;
+    }
+    &__items:nth-child(3) &__slogan--emp, &__items:nth-child(3) &__slogan--kor{
+        color: darkslateblue;
+    }
+    &__items:nth-child(4) &__slogan--emp, &__items:nth-child(4) &__slogan--kor{
+        color: darkred;
+    }
+    &__items:nth-child(5) &__slogan--emp, &__items:nth-child(5) &__slogan--kor{
+        color: darkseagreen;
     }
 
 
     &__slogan {
         position: fixed;
-        color: #FFF;
+        color: $bg-color;
         z-index: 10;
         width: 100%;
         top: 20%;
+        color: $primary;
 
         &--eng {
             font-weight: 700;
-            font-size: rem(100px);
+            font-size: rem(130px);
             text-align: left;
-            letter-spacing: rem(20px);
+            letter-spacing: rem(30px);
         }
 
         &--emp {
             font-size: rem(400px);
+            padding: 0;
         }
 
         &--kor {
             font-size: 1em;
             font-weight: 400;
-            right: 10%;
-            font-size: 2rem;
+            right: 0;
+            font-size: 2.5rem;
             text-align: right;
             position: fixed;
-            top: 30%;
-            max-width: 50%;
+            top: 20%;
+            left: 45%;
+            max-width: 600px;
             word-break: keep-all;
             line-height: 1.3;
         }

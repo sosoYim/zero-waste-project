@@ -98,5 +98,4 @@ document.addEventListener("scroll", (e) => {
     headerWrapper.classList.add("header-appear");
     header.classList.remove("nav-slideUp");
   }
-  window.__scrollPosition = document.documentElement.scrollTop || 0;
 });
