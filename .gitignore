@@ -3,4 +3,4 @@ css/
 .DS_Store
 _index_copy.scss
 .gitignore
-./.vscode/settings.json
+build/
