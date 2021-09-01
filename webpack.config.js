@@ -20,7 +20,7 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, paths.dist),
     port: process.env.PORT,
-    writeToDisk: false,
+    writeToDisk: true,
     compress: true,
     overlay: true,
     hot: true,
@@ -80,11 +80,16 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, './src/index.html'),
+      template: path.join(__dirname, './index.html'),
     }),
     new MiniCSSExtractPlugin({
       linkType: false,
-      filename: 'css/style.css',
+      filename: './css/style.css',
     }),
+    new CopyPlugin({
+      patterns: [{
+          from: 'src'
+      }]
+  })
   ],
 };

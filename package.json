@@ -4,8 +4,10 @@
   "description": "Azang's first mini project : zero-waste",
   "main": "index.js",
   "scripts": {
+    "p":"run-p sass dev",
+    "dev": "npm run dev__ -- --open",
     "start": "run-p watch serve",
-    "dev": "webpack serve --node-env=development",
+    "dev__": "webpack serve --node-env=development",
     "build": "webpack build --node-env=production",
     "clear": "rimraf -rf build dist",
     "sass": "sass src:css",
