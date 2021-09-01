@@ -26,7 +26,6 @@ gsap.to('.state__content', {
 
 gsap.to(".state__content", {
   scrollTrigger: {
-    markers: "true",
     trigger: ".state__content",
     scrub: true,
     pin: true,
@@ -56,6 +55,18 @@ gsap.to(".state__desc-wrapper", {
     end: "bottom -100%",
   },
 });
+
+
+gsap.to(".intro__zero-waste", {
+  scrollTrigger: {
+    trigger: ".intro__zero-waste",
+    toggleClass: 'show',
+    start: "top center",
+    end: "bottom -100%",
+  },
+});
+
+
 
 
 // let el = [...document.querySelectorAll('.intro__state')]
