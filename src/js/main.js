@@ -4,22 +4,44 @@
 //all radios
 const radios = document.querySelectorAll('input[class="field__radio"]');
 let result = 0;
-const resultValue = document.getElementById("resultValue");
 // radio 선택으로 페이지 이동
-radios.forEach(function(elem) {
-    elem.addEventListener("click", function() {
-      //라디오 버튼 값이 변하면
-      //네비게이션 값 바꿔주기
-      let curNum = parseInt(elem.getAttribute("name"));
-      let nextNum = curNum +1;
-      document.getElementById(`mbti-${curNum}`).classList.remove('is-flex-active');
-      document.getElementById(`mbti-${nextNum}`).classList.add('is-flex-active');
+radios.forEach(function (elem) {
+  elem.addEventListener("click", function () {
+    //라디오 버튼 값이 변하면
+    //네비게이션 값 바꿔주기
+    let curNum = parseInt(elem.getAttribute("name"));
+    let nextNum = curNum + 1;
+    document
+      .getElementById(`mbti-${curNum}`)
+      .classList.remove("is-flex-active");
+    document.getElementById(`mbti-${nextNum}`).classList.add("is-flex-active");
 
       result += parseInt(elem.getAttribute("value"));
-      resultValue.value = result;
-      console.log(`resultValue.value : ${resultValue.value}`);
+      console.log(`문제,value : ${curNum} , ${result}`);
     });
 });
+
+// 결과 페이지로 값 보내기
+const getResult = document.getElementById("getResult");
+getResult.addEventListener("click", function(){
+  let resultFinal;
+  if(result<6){
+    resultFinal = 1;
+  }else if(result< 11){
+    resultFinal = 2;
+  }else if(result < 15){
+    resultFinal = 3;
+  }else{
+    resultFinal = 4;
+  }
+  getResult.setAttribute("href", `./mbti-r-${resultFinal}.html`);
+});
+
+//결과 페이지에서 값 받기
+
+
+
+
 //======================================
 //    YIM END
 //======================================
@@ -27,7 +49,7 @@ radios.forEach(function(elem) {
 //======================================
 //    SON START
 //======================================
-
+let header = document.querySelector(".header");
 let headerWrapper = document.querySelector(".header__wrapper");
 let logo = document.querySelector(".logo");
 let button = document.querySelector(".header__menu-button");
@@ -36,6 +58,7 @@ let headerMenuButton = document.querySelector(".header__menu-button");
 let buttonBurgerBar = document.querySelectorAll(".button--burger__bar");
 let headerNav = document.querySelector(".header__nav");
 let navClose = document.querySelector(".nav__close");
+let footer = document.querySelector(".footer");
 
 // 메뉴 클릭 이벤트
 button.addEventListener(
@@ -54,6 +77,9 @@ button.addEventListener(
     setTimeout(() => {
       headerNav.classList.add("block");
     }, 800);
+    setTimeout(() => {
+      footer.classList.add("is-active");
+    }, 2000);
   },
   false
 );
@@ -62,26 +88,34 @@ button.addEventListener(
 navClose.addEventListener("click", (e) => {
   e.preventDefault;
   headerNav.classList.add("nav-disappear");
+  footer.classList.add("nav-disappear");
   setTimeout(() => {
     headerNav.classList.remove("is-active");
+    footer.classList.remove("is-active");
     headerNav.classList.remove("block");
     headerNav.classList.remove("nav-disappear");
+    footer.classList.remove("nav-disappear");
   }, 400);
 });
 
 // 스크롤 이벤트
 document.addEventListener("scroll", (e) => {
-  if (scrollY > screen.height - 398) {
-    headerWrapper.classList.add("text-color");
-    headerMenuButton.classList.add("text-color");
-    for (let bar of buttonBurgerBar) {
-      bar.classList.add("button--burger__bar-color");
-    }
+  // 헤더 스크롤 시 사라지는 이벤트
+  let currentY = document.documentElement.scrollTop;
+  let direction = currentY - window.__scrollPosition >= 0 ? 1 : -1;
+  // console.log(direction);
+  if (direction === 1) {
+    headerWrapper.classList.remove("header-hide");
+    headerWrapper.classList.add("header-appear");
+    header.classList.remove("nav-slideUp");
   } else {
-    headerWrapper.classList.remove("text-color");
-    headerMenuButton.classList.remove("text-color");
-    for (let bar of buttonBurgerBar) {
-      bar.classList.remove("button--burger__bar-color");
-    }
+    headerWrapper.classList.remove("header-appear");
+    headerWrapper.classList.add("header-hide");
+    header.classList.add("nav-slideUp");
+  }
+  if (currentY === 0) {
+    headerWrapper.classList.remove("header-hide");
+    headerWrapper.classList.add("header-appear");
+    header.classList.remove("nav-slideUp");
   }
 });

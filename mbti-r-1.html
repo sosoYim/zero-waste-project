@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero-Waste</title>
+  <link rel="stylesheet" href="./css/style/index.css">
+</head>
+<body>
+    <header class="header">
+
+    <!-- 헤더 Wrapper -->
+    <div class="header__wrapper">
+        <h1 class="logo"><a href="./index.html">Zero-Waste</a></h1>
+        <div class="header__menu">
+        <a href="#" class="header__menu-staff">Staff</a>
+        <button class="header__menu-button">
+            Menu
+            <div class="button--burger">
+            <span class="button--burger__bar"></span>
+            <span class="button--burger__bar"></span>
+            </div>
+        </button>
+        </div>
+    </div>
+
+    <!-- 네비게이션 -->
+    <nav class="header__nav">
+        <div class="header__nav-inner">
+        <h2 class="header__nav-heading">Let's Together!</h2>
+        <ul class="header__nav-list">
+            <li class="header__nav-item our-team"><a class="header__nav-link" href="#">Our Team</a></li>
+            <li class="header__nav-item news-views"><a class="header__nav-link" href="#">News & Views</a></li>
+            <li class="header__nav-item making-firm"><a class="header__nav-link" href="#">Making Firm</a></li>
+            <li class="header__nav-item support-us"><a class="header__nav-link" href="#">Support Us</a></li>
+        </ul>
+        <!-- 수정 -->
+        <button class="nav__close"><span>×</span></button>
+        </div>
+    </nav>
+    </header>
+
+    <main>
+        <!-- 치고올라오는 물결 -->
+        <div class="first-access first-access-effect--1"></div>
+        <div class="first-access first-access-effect--2"></div>
+        <div class="first-access first-access-effect--3"></div>
+        <!-- mbti 결과 -->
+        <section class="mbti-r">
+            <h2 class="mbti-r__heading a11yHidden">나의 제로웨이스트력 결과</h2>
+            <div class="mbti-r__container">
+                <div class="mbti-r__result">
+                    <p>
+                        <div>지구는 당신을...</div>
+                        <div><strong class="mbti-r__strong">바퀴벌레</strong>라고 생각합니다.</div>
+                    </p>
+                    <div class="mbti-r__image">
+                        <div class="sprite sprite--r1"></div>
+                    </div>
+                </div>
+                <div class="mbti-r__detail">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo vero facilis id ad officia incidunt dolor iusto optio iure non? Velit veniam aut id libero unde architecto sint quibusdam dicta?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo vero facilis id ad officia incidunt dolor iusto optio iure non? Velit veniam aut id libero unde architecto sint quibusdam dicta?</p>
+                </div>
+            </div>
+            <h2 class="a11yHidden">나의 결과 공유하기</h2>
+            <div class="mbti-r__share">
+                <!-- 인스타(mbti-r__share__insta), 페이스북, ... IR, 스프라이트 기법 사용 -->
+                <button type="button" class="buttonNone"><div class="sprite sprite--kakao trick-indent">카카오로 공유</div></button> 
+                <button type="button" class="buttonNone"><div class="sprite sprite--insta trick-indent">인스타로 공유</div></button>
+                <button type="button" class="buttonNone"><div class="sprite sprite--fb trick-indent">페이스북으로 공유</div></button>                   
+                <button type="button" class="buttonNone"><div class="sprite sprite--download trick-indent">로컬에 저장</div></button>
+            </div>
+            <a class="button mbti-r__again" href="./mbti.html">테스트 다시하기</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+
+    </footer>
+    <script src="./src/js/main.js"></script>
+</body>
+</html>
