@@ -1,4 +1,4 @@
-@use '../utils' as *;
+@use '../utils'as *;
 
 .temp {
     background-color: pink;
@@ -18,21 +18,18 @@
     background-color: #FFF;
     font-weight: 400;
 
-    &__heading{
+    &__heading {
         @include a11yHidden;
     }
 
-
-    &__container{
-        scroll-snap-type: y mandatory;
-    }
-
-    &__list{
+    &__list {
         height: 500vh;
+
+        scroll-snap-type: y mandatory;
+        scroll-padding-top: 0vh;
     }
 
     &__items {
-        scroll-snap-align: start;
         position: relative;
         display: flex;
         align-items: center;
@@ -41,9 +38,14 @@
         color: #FFF;
         margin-bottom: rem(2px);
         /* 한 페이지 지나갈 때 흰색 선으로 구분 */
+
+
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        overflow: hidden;
     }
 
-    &__items:after {
+    &__items::after {
         content: "";
         z-index: 0;
         position: absolute;
@@ -51,46 +53,34 @@
         left: 0;
         width: 100%;
         height: 100%;
+
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
     }
 
     &__items:nth-child(1) {
         z-index: 2;
-
-        &:after{
-            background: navy;
-        }
+        background: navy;
     }
 
     &__items:nth-child(2) {
         z-index: 3;
-
-        &:after{
-            background: darkorchid;
-        }
+        background: darkorchid;
     }
 
     &__items:nth-child(3) {
         z-index: 4;
-
-        &:after{
-            background: darkseagreen;
-        }
+        background: darkseagreen;
     }
 
     &__items:nth-child(4) {
         z-index: 5;
-
-        &:after{
-            background: darksalmon;
-        }
+        background: darksalmon;
     }
 
     &__items:nth-child(5) {
         z-index: 6;
-
-        &:after{
-            background: darkturquoise;
-        }
+        background: darkturquoise;
     }
 
     &__slogan {
@@ -104,9 +94,10 @@
             font-weight: 700;
             font-size: rem(100px);
             text-align: left;
+            letter-spacing: rem(20px);
         }
 
-        &--emp{
+        &--emp {
             font-size: rem(400px);
         }
 
