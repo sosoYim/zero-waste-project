@@ -13,6 +13,8 @@ const paths = {
 
 /* -------------------------------------------------------------------------- */
 
+const pages = ["index", "mbti-r-1", "mbti-r-2", "mbti-r-3", "mbti-r-4", "mbti", "supportUs"];
+
 module.exports = {
   target: "web",
   mode: isDevelopment ? "development" : "production",
@@ -25,43 +27,50 @@ module.exports = {
     overlay: true,
     hot: true,
   },
-  entry: {
-    main: "./src/index.js",
-  },
+  entry: pages.reduce((config, page) => {
+    config[page] = `./src/${page}.js`;
+    return config;
+  }, {}),
   output: {
     publicPath: "/",
     path: path.join(__dirname, isDevelopment ? paths.dist : paths.build),
     filename: "js/[name].bundle.js",
     assetModuleFilename: "images/[name][ext]",
   },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.s(a|c)ss$/i,
         exclude: /node_modules/,
         use: [
-          isDevelopment ? "style-loader" : MiniCSSExtractPlugin.loader,
+          isDevelopment ? 'style-loader' : MiniCSSExtractPlugin.loader,
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               sourceMap: true,
               importLoaders: 2,
             },
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               sourceMap: true,
               postcssOptions: {
                 plugins: [
                   [
-                    "postcss-preset-env",
+                    'postcss-preset-env',
                     {
                       stage: 3,
                       features: {
-                        "nesting-rules": true,
+                        'nesting-rules': true,
                       },
-                      autoprefixer: { grid: true },
+                      autoprefixer: {
+                        grid: true
+                      },
                     },
                   ],
                 ],
@@ -69,7 +78,7 @@ module.exports = {
             },
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
               sourceMap: true,
             },
@@ -84,12 +93,21 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "./index.html"),
-    }),
     new MiniCSSExtractPlugin({
       linkType: false,
-      filename: "css/style.css",
+      filename: './css/style.css',
     }),
-  ],
+    new CopyPlugin({
+      patterns: [{
+        from: 'src'
+      }]
+    })
+  ].concat(pages.map((page) =>
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: `./${page}.html`,
+      filename: `${page}.html`,
+      chunks: [page],
+    })
+  ))
 };
