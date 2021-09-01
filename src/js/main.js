@@ -98,9 +98,4 @@ document.addEventListener("scroll", (e) => {
     headerWrapper.classList.add("header-appear");
     header.classList.remove("nav-slideUp");
   }
-<<<<<<< HEAD
 });
-=======
-  window.__scrollPosition = document.documentElement.scrollTop || 0;
-});
->>>>>>> 97c5e510c25cb60dbb071cf0309861acc0c9ed72
