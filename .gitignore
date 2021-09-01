@@ -1,9 +1,6 @@
 node_modules/
 css/
-<<<<<<< HEAD
-src/js/
-=======
->>>>>>> c8e128a7183e20dce87417e93f9dc2df2d323b88
 .DS_Store
 _index_copy.scss
 .gitignore
+./.vscode/settings.json
