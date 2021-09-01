@@ -63,13 +63,18 @@ body {
 
         &.is-active {
             position: fixed;
-            z-index: 5;
+            max-width: 50%;
+            margin-right: 50%;
+            padding-right: 0;
+            z-index: 1;
             bottom: 0;
             display: block;
             font-size: rem(16px) !important;
 
             .footer__inner {
                 display: block;
+                max-width: 600px;
+                margin: 0 0 0 auto;
             }
 
             [class*='-heading'], [class*='-item'] {

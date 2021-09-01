@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/jkpark104/zero-waste-project#readme",
   "devDependencies": {
+    "chokidar": "^3.5.2",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.2.0",
     "dotenv": "^10.0.0",
@@ -43,6 +44,7 @@
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
   },
+  "type": "module",
   "browserslist": [
     "defaults",
     "not dead",

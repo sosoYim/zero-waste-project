@@ -47,23 +47,24 @@ navClose.addEventListener("click", (e) => {
   }, 400);
 });
 
+window.__scrollPosition = document.documentElement.scrollTop || 0;
+
 // 스크롤 이벤트
 document.addEventListener("scroll", (e) => {
-  if (scrollY > screen.height - 398) {
-    headerWrapper.classList.add("text-color");
-    headerMenuButton.classList.add("text-color");
-    for (let bar of buttonBurgerBar) {
-      bar.classList.add("button--burger__bar-color");
-    }
-    header.classList.add("nav-slideUp");
-  } else {
-    headerWrapper.classList.remove("text-color");
-    headerMenuButton.classList.remove("text-color");
-    for (let bar of buttonBurgerBar) {
-      bar.classList.remove("button--burger__bar-color");
-    }
+  // 헤더 스크롤 시 사라지는 이벤트
+  let currentY = document.documentElement.scrollTop;
+  let direction = currentY - window.__scrollPosition >= 0 ? 1 : -1;
+  console.log(direction);
+  if (direction === 1) {
+    headerWrapper.classList.remove("header-hide");
+    headerWrapper.classList.add("header-appear");
     header.classList.remove("nav-slideUp");
+  } else {
+    headerWrapper.classList.remove("header-appear");
+    headerWrapper.classList.add("header-hide");
+    header.classList.add("nav-slideUp");
   }
+  window.__scrollPosition = document.documentElement.scrollTop || 0;
 });
 
 // ======================== topic 섹션 js ========================
