@@ -6,19 +6,21 @@ const radios = document.querySelectorAll('input[class="field__radio"]');
 let result = 0;
 const resultValue = document.getElementById("resultValue");
 // radio 선택으로 페이지 이동
-radios.forEach(function(elem) {
-    elem.addEventListener("click", function() {
-      //라디오 버튼 값이 변하면
-      //네비게이션 값 바꿔주기
-      let curNum = parseInt(elem.getAttribute("name"));
-      let nextNum = curNum +1;
-      document.getElementById(`mbti-${curNum}`).classList.remove('is-flex-active');
-      document.getElementById(`mbti-${nextNum}`).classList.add('is-flex-active');
+radios.forEach(function (elem) {
+  elem.addEventListener("click", function () {
+    //라디오 버튼 값이 변하면
+    //네비게이션 값 바꿔주기
+    let curNum = parseInt(elem.getAttribute("name"));
+    let nextNum = curNum + 1;
+    document
+      .getElementById(`mbti-${curNum}`)
+      .classList.remove("is-flex-active");
+    document.getElementById(`mbti-${nextNum}`).classList.add("is-flex-active");
 
-      result += parseInt(elem.getAttribute("value"));
-      resultValue.value = result;
-      console.log(`resultValue.value : ${resultValue.value}`);
-    });
+    result += parseInt(elem.getAttribute("value"));
+    resultValue.value = result;
+    console.log(`resultValue.value : ${resultValue.value}`);
+  });
 });
 //======================================
 //    YIM END
@@ -76,14 +78,12 @@ navClose.addEventListener("click", (e) => {
   }, 400);
 });
 
-window.__scrollPosition = document.documentElement.scrollTop || 0;
-
 // 스크롤 이벤트
 document.addEventListener("scroll", (e) => {
   // 헤더 스크롤 시 사라지는 이벤트
   let currentY = document.documentElement.scrollTop;
   let direction = currentY - window.__scrollPosition >= 0 ? 1 : -1;
-  console.log(direction);
+  // console.log(direction);
   if (direction === 1) {
     headerWrapper.classList.remove("header-hide");
     headerWrapper.classList.add("header-appear");
@@ -93,4 +93,10 @@ document.addEventListener("scroll", (e) => {
     headerWrapper.classList.add("header-hide");
     header.classList.add("nav-slideUp");
   }
+  if (currentY === 0) {
+    headerWrapper.classList.remove("header-hide");
+    headerWrapper.classList.add("header-appear");
+    header.classList.remove("nav-slideUp");
+  }
+  window.__scrollPosition = document.documentElement.scrollTop || 0;
 });
