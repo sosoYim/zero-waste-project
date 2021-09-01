@@ -1,5 +1,5 @@
-@use '../utils' as *;
-@use '../config' as *;
+@use '../utils'as *;
+@use '../config'as *;
 
 // .box {
 //   width: 100%;
@@ -304,3 +304,172 @@
 }
 
 // 
+
+.intro__article {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .article__right {
+    text-align: right;
+  }
+
+  .article__left {
+    text-align: left;
+  }
+
+  .article {
+    display: inline-block;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    align-items: center;
+
+    &__img {
+      display: flex;
+      align-items: center;
+      width: 40.42553191489362%;
+      min-height: 30px;
+      box-sizing: border-box;
+      margin-left: 1%;
+    }
+
+    &__img:nth-child(2n) {
+      // opacity: 0;
+      // transform: translateX(-300px);
+    }
+
+    &__img:nth-child(2n+1) {
+      // opacity: 0;
+      // transform: translateX(300px);
+    }
+
+    &__img-wrapper {
+      margin-bottom: 30px;
+      border: 1px solid #cccccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 1px 1px 5px 1px #CCCCCC;
+      transition: 0.3s;
+      padding: 10px;
+      height: 0;
+      padding-bottom: calc(100% - 10px);
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &__desc-wrapper {
+      width: 57.44680851063829%;
+      min-height: 30px;
+      box-sizing: border-box;
+      margin-left: 1%;
+    }
+
+    &__subtitle {
+      font-size: 1.8em;
+    }
+  }
+
+  // @at-root .article.show {
+  //   .article__img:nth-child(2n) {
+  //     opacity: 1;
+  //     transition: translateX(0);
+  //     transition: all 1s;
+  //   }
+
+  //   .article__img:nth-child(2n+1) {
+  //     opacity: 1;
+  //     transition: translateX(0);
+  //     transition: all 1s;
+  //   }
+  // }
+}
+
+/* Styles from the GreenSock website */
+// .intro__article{
+//   background-color: lime;
+// }
+// .ipsType_right {
+//   text-align: right;
+//   background-color: skyblue;
+// }
+// .ipsType_center {
+//   text-align: center;
+// }
+// .cInnerContent {
+//   max-width: 1240px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   // background-color: red;
+// }
+// .ipsSpacer_bottom_double {
+//   margin-bottom: 30px;
+// }
+// .ipsGrid {
+//   display: inline-block;
+//   display: -ms-flexbox;
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+// .ipsGrid::before, .ipsGrid::after {
+//   display: flex;
+//   content: "";
+//   line-height: 0;
+//   background-color: tomato;
+// }
+// .ipsGrid > [class*="ipsGrid_span"] {
+//   display: block;
+//   width: 100%;
+//   min-height: 30px;
+//   box-sizing: border-box;
+// }
+// .ipsGrid > .ipsGrid_span5 {
+//   width: 40.42553191489362%;
+// }
+// .ipsGrid > .ipsGrid_span7 {
+//   width: 57.44680851063829%;
+// }
+// .ipsGrid > [class*="ipsGrid_span"] {
+//   float: left;
+//   margin-left: 2%;
+// }
+// .ipsGrid > [class*="ipsGrid_span"]:first-child {
+//   margin-left: 0;
+// }
+// .feature {
+//   display: flex;
+//   align-items: center;
+// }
+// .card {
+//   margin-bottom: 30px;
+//   border: 1px solid #cccccc;
+//   border-radius: 8px;
+//   overflow: hidden;
+//   background: #ffffff;
+//   box-shadow: 1px 1px 5px 1px #CCCCCC;
+// /*   transition: 0.3s; */
+// }
+// .featured-image-container .card {
+//   padding: 10px;
+//   height: 0;
+//   padding-bottom: calc(100% - 10px);
+// }
+// h2.heading_large {
+//   font-size: 1.8em;
+// }
+// img {
+//   max-width: 100%;
+// }
+
+// .header-section {
+//   margin: 200px auto;
+// }
+
+// .gs_reveal {
+//   opacity: 0;
+//   visibility: hidden;
+//   will-change: transform, opacity;
+// }
