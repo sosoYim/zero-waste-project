@@ -1,3 +1,13 @@
+
+// 폰트 스타일
+@mixin fontStyles($fontSize, $fontWeight: 400, $lineHeight: inherit, $color: inherit){
+    font-size: rem($fontSize);
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+    color: $color;
+    @content;
+}
+
 // Auto Margin을 활용한 박스 가운데 정렬 ------------------------------------------------ /
 @mixin autoMargin($marginX: auto) {
     margin-left: $marginX;
@@ -18,6 +28,7 @@
     width: 100%;
     max-width: $width;
 }
+
 // 반응형 미디어 ----------------------------------------------------------- /
 @mixin responsive($width: max-width){
     #{$width}: 100%;
@@ -29,6 +40,7 @@
 // display 속성 변환
 @mixin is-active($display: block){
     display: $display !important;
+    @content;
 }
 
 .is-active{
@@ -49,12 +61,4 @@
 
 .trick-indent{
     @include trick-indent();
-}
-// 폰트 스타일
-@mixin fontStyles($fontSize, $fontWeight: 400, $lineHeight: inherit, $color: inherit){
-    font-size: rem($fontSize);
-    font-weight: $fontWeight;
-    line-height: $lineHeight;
-    color: $color;
-    @content;
 }
