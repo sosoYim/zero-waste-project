@@ -17,7 +17,7 @@ button.addEventListener(
   "click",
   (e) => {
     e.preventDefault;
-    headerNav.classList.add("is-active");
+
     for (let i = 1; i <= waveEffect.length; i++) {
       waveEffect[i - 1].classList.remove(`first-access-effect--${i}`);
     }
@@ -27,6 +27,7 @@ button.addEventListener(
       }
     }, 200);
     setTimeout(() => {
+      headerNav.classList.add("is-active");
       headerNav.classList.add("block");
     }, 800);
     setTimeout(() => {
