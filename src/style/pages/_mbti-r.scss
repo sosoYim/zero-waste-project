@@ -1,0 +1,107 @@
+@use '../config' as *;
+@use '../utils' as *;
+@use '../components' as *;
+
+//======================
+//mbti-r
+
+.mbti-r{
+    
+    position: absolute;
+    top: 0;
+    min-height: 100%;
+    background-color: $blue3;
+    font-size: rem(24px);
+    line-height: rem(60px);
+
+    @include mobile{
+        padding: rem(92px) 5% 5% 5%;
+    }
+    
+    @include desktop{
+        position: static;
+        padding: 8%;
+        @include autoMargin;
+        width: 60vw;
+        min-width: rem(767px);
+        margin-top: rem(120px);
+        @include shadowBox;
+    }
+    
+    &__result{
+        text-align: center;
+        &--bigger{
+            font-size: rem(32px);
+        }
+    }
+
+    &__image{
+        margin: rem(40px) 0;
+    }
+
+    &__detail{
+        // text-align: center;
+        // word-break: keep-all;
+    }
+    &__share{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+    &__again{
+        margin-top: 3rem;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+    }
+}
+
+.sprite{
+    background-image: url("../../src/images/mbti-sprite.png");
+    background-repeat: no-repeat;
+    &--r1{
+        @include autoMargin;
+        background-position: 0 0;
+        width: 180px;
+        height: 266px;
+    }
+    &--r2{
+        @include autoMargin;
+        background-position: 10% 0;
+        width: 227px;
+        height: 266px;
+    }
+    &--r3{
+        @include autoMargin;
+        background-position: 10% 0;
+        width: 227px;
+        height: 266px;
+    }
+    &--r4{
+        @include autoMargin;
+        background-position: 10% 0;
+        width: 227px;
+        height: 266px;
+    }
+    &--kakao{
+        background-position: 3.4% 21%;
+        width: 76px;
+        height: 72px; 
+    }
+    &--insta{
+        background-position: 7.1% 21%;
+        width: 76px;
+        height: 72px;
+    }
+    &--fb{
+        background-position: 0 21%;
+        width: 72px;
+        height: 72px;
+    }
+    &--download{
+        background-position: 10.4% 21%;
+        width: 76px;
+        height: 72px;
+    }
+}
