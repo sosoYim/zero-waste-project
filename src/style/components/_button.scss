@@ -9,7 +9,6 @@
     background : $primary;
     color: $white;
     padding: $padding-tb $padding-lr;
-    // font-size: rem(32px);
     border-radius: rem(5px);
     text-align: center;
     @content;
