@@ -1,5 +1,5 @@
-@use '../utils' as *;
-@use '../config' as *;
+@use '../utils'as *;
+@use '../config'as *;
 
 .cases {
 
@@ -35,6 +35,7 @@
         &--group2 {
             display: inline-block;
             color: $text-color2;
+
             @include mobile {
                 font-size: 10vmin;
             }
@@ -56,18 +57,26 @@
 
     &__card {
         display: inline-block;
-        max-width: rem(300px);
-        min-width: rem(200px);
+
         margin: rem(20px);
         padding: rem(20px);
         overflow: hidden;
         position: relative;
+
+        @include mobile {
+            max-width: rem(300px);
+            min-width: rem(200px);
+        }
+
+        @include desktop {
+            max-width: rem(300px);
+            min-width: rem(200px);
+        }
     }
 
     &__slogan {
+        @include fontStyles(35px, 700, inherit, inherit);
         margin-bottom: rem(10px);
-        font-size: rem(35px);
-        font-weight: 700;
         text-align: left;
     }
 
@@ -79,13 +88,13 @@
         transition: 0.4s;
     }
 
-    &__card:hover &__pic{
+    &__card:hover &__pic {
         opacity: 0.3;
         transition: 0.4s;
     }
 
     &__hashtag {
-        font-size: rem(16px);
+        @include fontStyles(16px, 400, inherit, inherit);
         margin-top: rem(10px);
     }
 
@@ -99,8 +108,7 @@
         position: absolute;
         top: 40%;
         right: 50%;
-        transform: translate(50%, 300%);
-        color: transparent;
+        transform: translate(50%, 400%);
         transition: 0.4s;
     }
 
@@ -110,11 +118,10 @@
         transition: 0.4s;
     }
 
-    &__button{
+    &__button {
         display: block;
         margin: rem(50px) auto;
         padding: rem(20px);
         width: 50%;
     }
 }
-
