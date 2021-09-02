@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 const isDevelopment = process.env.NODE_ENV === "development";
 const paths = {
@@ -13,20 +14,20 @@ const paths = {
 
 /* -------------------------------------------------------------------------- */
 
-const pages = ["index", "mbti-r-1", "mbti-r-2", "mbti-r-3", "mbti-r-4", "mbti", "supportUs"];
+const pages = [
+  "index",
+  "mbti-r-1",
+  "mbti-r-2",
+  "mbti-r-3",
+  "mbti-r-4",
+  "mbti",
+  "supportUs",
+];
 
 module.exports = {
   target: "web",
   mode: isDevelopment ? "development" : "production",
   devtool: isDevelopment ? "eval" : false,
-  devServer: {
-    contentBase: path.resolve(__dirname, paths.dist),
-    port: process.env.PORT,
-    writeToDisk: false,
-    compress: true,
-    overlay: true,
-    hot: true,
-  },
   entry: pages.reduce((config, page) => {
     config[page] = `./src/${page}.js`;
     return config;
@@ -43,33 +44,34 @@ module.exports = {
     },
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.s(a|c)ss$/i,
         exclude: /node_modules/,
         use: [
-          isDevelopment ? 'style-loader' : MiniCSSExtractPlugin.loader,
+          isDevelopment ? "style-loader" : MiniCSSExtractPlugin.loader,
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               sourceMap: true,
               importLoaders: 2,
             },
           },
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               sourceMap: true,
               postcssOptions: {
                 plugins: [
                   [
-                    'postcss-preset-env',
+                    "postcss-preset-env",
                     {
                       stage: 3,
                       features: {
-                        'nesting-rules': true,
+                        "nesting-rules": true,
                       },
                       autoprefixer: {
-                        grid: true
+                        grid: true,
                       },
                     },
                   ],
@@ -78,7 +80,7 @@ module.exports = {
             },
           },
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
               sourceMap: true,
             },
@@ -95,19 +97,37 @@ module.exports = {
   plugins: [
     new MiniCSSExtractPlugin({
       linkType: false,
-      filename: './css/style.css',
+      filename: "./css/style.css",
     }),
     new CopyPlugin({
-      patterns: [{
-        from: 'src'
-      }]
-    })
-  ].concat(pages.map((page) =>
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: `./${page}.html`,
-      filename: `${page}.html`,
-      chunks: [page],
-    })
-  ))
+      patterns: [
+        {
+          from: "src",
+        },
+      ],
+    }),
+    new ImageMinimizerPlugin({
+      // 제외설정
+      exclude: /node_modules/,
+      // 최적화옵션
+      minimizerOptions: {
+        plugins: [
+          ["gifsicle", { interlaced: true }],
+          ["jpegtran", { progressive: true }],
+          ["optipng", { optimizationLevel: 5 }],
+          ["svgo", { plugins: [{ removeViewBox: false }] }],
+        ],
+      },
+    }),
+  ].concat(
+    pages.map(
+      (page) =>
+        new HtmlWebpackPlugin({
+          inject: true,
+          template: `./${page}.html`,
+          filename: `${page}.html`,
+          chunks: [page],
+        })
+    )
+  ),
 };

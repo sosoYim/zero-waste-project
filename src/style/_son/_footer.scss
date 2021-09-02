@@ -1,7 +1,6 @@
 @use '../utils' as *;
 @use '../config' as *;
-body {
-}
+
 .footer {
     width: 100%;
     margin: 0 auto rem(80px) auto;
@@ -22,9 +21,13 @@ body {
         display: flex;
         flex-flow: wrap;
         margin: 0 auto;
+
     }
 
     @include mobile {
+        &__connect, &__support, &__follow {
+            width: 100%;
+        }        
         margin-bottom: rem(20px);
         [class*='-heading'] {
             font-size: rem(20px);
