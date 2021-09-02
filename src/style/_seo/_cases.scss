@@ -22,13 +22,26 @@
         &--group1 {
             display: inline-block;
             color: $primary;
-            font-size: rem(80px);
+
+            @include mobile {
+                font-size: 12vmin;
+            }
+
+            @include desktop {
+                font-size: 17vmin;
+            }
         }
 
         &--group2 {
             display: inline-block;
             color: $text-color2;
-            font-size: rem(60px);
+            @include mobile {
+                font-size: 10vmin;
+            }
+
+            @include desktop {
+                font-size: 15vmin;
+            }
         }
     }
 
