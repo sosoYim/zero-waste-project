@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 const isDevelopment = process.env.NODE_ENV === "development";
 const paths = {
@@ -27,14 +28,6 @@ module.exports = {
   target: "web",
   mode: isDevelopment ? "development" : "production",
   devtool: isDevelopment ? "eval" : false,
-  devServer: {
-    contentBase: path.resolve(__dirname, paths.dist),
-    port: process.env.PORT,
-    wTriteoDisk: true,
-    compress: true,
-    overlay: true,
-    hot: true,
-  },
   entry: pages.reduce((config, page) => {
     config[page] = `./src/${page}.js`;
     return config;
@@ -112,6 +105,19 @@ module.exports = {
           from: "src",
         },
       ],
+    }),
+    new ImageMinimizerPlugin({
+      // 제외설정
+      exclude: /node_modules/,
+      // 최적화옵션
+      minimizerOptions: {
+        plugins: [
+          ["gifsicle", { interlaced: true }],
+          ["jpegtran", { progressive: true }],
+          ["optipng", { optimizationLevel: 5 }],
+          ["svgo", { plugins: [{ removeViewBox: false }] }],
+        ],
+      },
     }),
   ].concat(
     pages.map(

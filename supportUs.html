@@ -22,10 +22,10 @@
                 <a href="#" class="header__menu-staff">Staff</a>
                 <button class="header__menu-button">
                     Menu
-                    <div class="button--burger">
+                    <span class="button--burger">
                         <span class="button--burger__bar"></span>
                         <span class="button--burger__bar"></span>
-                    </div>
+                    </span>
                 </button>
             </div>
         </div>
@@ -60,19 +60,18 @@
         <div class="support-us__container"></div>
         <div class="support-us__wrapper">
             <video class="support-us__video" autoplay loop muted>
-                <source src="./videos/Bottle - 19543.mp4" type="video/mp4">
+                <source src="./videos/Bottle.mp4" type="video/mp4">
                 당신의 브라우저는 동영상을 지원하지 않습니다
             </video>
         </div>
 
         <h2 class="support-us__heading">우리의 노력을 응원해주세요!</h2>
 
-        <form action='' method="" class="support-us__form">
+        <form action='/' method="POST" class="support-us__form">
             <fieldset>
                 <legend class="a11yHidden">Support Us Form</legend>
                 <input class="support-us__input-name" maxlength="5" type="text" name="name" placeholder="이름" required>
-                <input class="support-us__input-message" type="text" name="message" placeholder="저희를 응원해주세요!"
-                    required></input>
+                <input class="support-us__input-message" type="text" name="message" placeholder="저희를 응원해주세요!" required>
 
                 <button class="support-us__form-button" type="submit">응원하기</button>
             </fieldset>
@@ -106,8 +105,10 @@
             </div>
         </div>
     </footer>
+
+    <script src="./js/main.js" defer></script>
+    <script src="./js/support.js" defer></script>
+
 </body>
-<script src="./js/main.js"></script>
-<script src="./js/support.js"></script>
 
 </html>
