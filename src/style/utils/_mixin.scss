@@ -5,7 +5,7 @@
 }
 
 // 요소 박스의 최대 크기 설정 ----------------------------------------------------------- /
-@mixin boxSizeMax($width: 1000px, $paddingX: 0){
+@mixin boxSizeMax($width: 1200px, $paddingX: 0){
     max-width: $width;
     padding-left: $paddingX;
     padding-right: $paddingX;
@@ -13,11 +13,6 @@
     @content;
 }
 
-//100% 넓이를 차지한다. width 설정시 최대 넓이 지정 가능.
-@mixin boxSizeFull($width){
-    width: 100%;
-    max-width: $width;
-}
 // 반응형 미디어 ----------------------------------------------------------- /
 @mixin responsive($width: max-width){
     #{$width}: 100%;

@@ -1,50 +1,19 @@
-@use '../utils' as *;
-@use '../config' as *;
+@use '../utils'as *;
+@use '../config'as *;
 
-// .box {
-//   width: 100%;
-//   height: 100vh;
-//   // background: linear-gradient($bg-color, $black);
-// }
-
-// body {
-//   // overflow-x: hidden;
-//   background-color: $bg-color;
-//   // background-color: $black;
-// }
-
+// INTRO__STATE || INTRO 1번
 .intro__state {
   overflow: hidden;
 
   .state {
     &__heading {
-      font-size: 5vmin;
       @include flexbox(row, center, center);
+      font-size: 5vmin;
       width: 100%;
       height: 100vh;
-      color: white;
+      color: $white;
       text-align: center;
       transition: background 1s;
-      // transform: translateX(-150px);
-      // opacity: 0;
-      // background-color: $black;
-    }
-
-    // &__heading.is-active {
-    //   transition: background 2000ms;
-    //   background-color: $black;
-    // }
-
-    @keyframes typing {
-      from {
-        width: 0
-      }
-    }
-
-    @keyframes blink {
-      50% {
-        border-color: transparent
-      }
     }
 
     &__heading.show {
@@ -58,6 +27,10 @@
       white-space: nowrap;
       overflow: hidden;
       border-right: 3px solid;
+    }
+
+    &__image {
+      height: 100vh;
     }
 
     &__image::before {
@@ -76,11 +49,6 @@
       transition: background 1s;
     }
 
-    // &__image.show.end::before {
-    //   background-color: $bg-color;
-    //   transition: background 1s;
-    // }
-
     &__image img {
       position: absolute;
       top: 0;
@@ -92,38 +60,46 @@
     }
 
     &__content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flexbox(row, center, center);
       width: 100%;
-      height: 100%;
-      color: white;
+      color: $white;
       text-align: center;
-      background-color: $bg-color;
     }
 
     &__desc-wrapper {
-      @include flexbox(row, flex-start, center);
-      width: 100%;
       height: 100vh;
-      max-width: 1200px;
-      margin: 0 auto;
-      background-color: $bg-color;
       position: relative;
-      // padding: 2%;
-      // background-color: skyblue;
+      // background-color: red;
+
+      @include desktop {
+        @include flexbox(row, flex-start, center);
+        @include boxSizeMax;
+      }
+
+      @include mobile {
+        @include flexbox(column, center, center);
+        @include boxSizeMax(600px);
+      }
     }
 
     &__video {
-      width: 48%;
-      border: 3px solid #cccccc;
+      border: 3px solid $gray2;
       border-radius: rem(16px);
       overflow: hidden;
-      background: #ffffff;
-      box-shadow: 1px 1px 5px 1px #CCCCCC;
+      background: $white;
+      box-shadow: 1px 1px 5px 1px $gray2;
       opacity: 0;
-      // margin-left: 1%;
       transform: translateX(-150px);
+
+      @include desktop {
+        width: 48%;
+      }
+
+      @include mobile {
+        width: 100%;
+        // @include boxSizeMax(600px);
+      }
+
     }
 
     &__desc-wrapper.show .state__video {
@@ -132,14 +108,16 @@
       transition: all 1s;
     }
 
-
     &__desc {
       font-size: 1.6vw;
       line-height: 1.5;
-      position: absolute;
-      padding: 0 2% 0 50%;
       opacity: 0;
       transform: translateX(150px);
+
+      @include desktop {
+        position: absolute;
+        padding: 0 2% 0 50%;
+      }
 
       >b {
         font-size: 1.8vw;
@@ -187,7 +165,7 @@
         position: absolute;
         top: calc(100% - var(--padding));
         left: 0;
-        background-color: white;
+        background-color: $white;
         width: 100%;
         height: 1.5vmin;
         transform: scaleX(0);
@@ -216,9 +194,7 @@
     &__subject-wrapper {
       position: absolute;
       right: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flexbox(row, center, center);
       width: 100%;
       height: 100%;
     }
@@ -226,12 +202,10 @@
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexbox(row, center, center);
   width: 100%;
   height: 100%;
-  color: white;
+  color: $white;
   text-align: center;
 }
 
@@ -242,28 +216,77 @@
 .intro__desc {
   width: 100%;
   height: 100%;
-  background-color: $bg-color;
 }
 
-// 
+// INTRO__ARTICLE|| INTRO 2번
+.intro__article {
+  @include boxSizeMax;
+
+  .article__right {
+    text-align: right;
+  }
+
+  .article__left {
+    text-align: left;
+  }
+
+  .article {
+    display: inline-block;
+    display: -ms-flexbox;
+    @include flexbox(row, $align-items:center, $flex-wrap: wrap);
+    margin-bottom: 30px;
+
+    &__img {
+      @include flexbox(row, $align-items: center);
+      width: 40.42553191489362%;
+      min-height: 30px;
+      margin-left: 1%;
+    }
+
+    &__img-wrapper {
+      margin-bottom: 30px;
+      border: 1px solid $gray2;
+      border-radius: 8px;
+      overflow: hidden;
+      background: $white;
+      box-shadow: 1px 1px 5px 1px $gray2;
+      transition: 0.3s;
+      padding: 10px;
+      height: 0;
+      padding-bottom: calc(100% - 10px);
+
+      >img {
+        @include responsive;
+      }
+    }
+
+    &__desc-wrapper {
+      width: 57.44680851063829%;
+      min-height: 30px;
+      margin-left: 1%;
+    }
+
+    &__subtitle {
+      font-size: rem(28px);
+    }
+  }
+}
+
+// INTRO__ZERO-WASTE|| INTRO 3번
 .intro__zero-waste {
   @include flexbox(column, center, center);
-  max-width: 1200px;
-  // max-height: 100vh;
-  margin: 0 auto;
+  @include boxSizeMax;
   color: $text-color;
   overflow: hidden;
+  height: 100vh;
 
   @at-root .zero-waste {
     &__img {
       opacity: 0;
       transform: translateX(150px);
-      background-color: lime;
 
       >img {
-        width: 100%;
-        height: auto;
-        background-color: red;
+        @include responsive;
       }
     }
 
@@ -302,5 +325,3 @@
     transition: all 2s;
   }
 }
-
-// 
