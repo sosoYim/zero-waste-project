@@ -1,0 +1,19 @@
+@use '../config' as *;
+@use '../utils/' as *;
+// Defult form components=========FROM YIM
+.button {
+    appearance: none;
+    // pointer-events: none;
+    border: 0;
+    background : $primary;
+    color: $white;
+    padding: rem(8px) rem(16px);
+    font-size: rem(32px);
+    border-radius: rem(5px);
+}
+
+.buttonNone{
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+}
