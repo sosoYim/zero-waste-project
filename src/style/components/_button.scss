@@ -1,7 +1,8 @@
 @use '../config' as *;
-@use '../utils/' as *;
+@use '../utils' as *;
 // Defult form components=========FROM YIM
-.button {
+
+@mixin button{
     appearance: none;
     // pointer-events: none;
     border: 0;
@@ -11,9 +12,15 @@
     font-size: rem(32px);
     border-radius: rem(5px);
 }
+.button {
+    @include button;
+}
 
-.buttonNone{
+@mixin buttonNone{
     appearance: none;
     border: 0;
     background-color: transparent;
+}
+.buttonNone{
+    @include buttonNone();
 }
