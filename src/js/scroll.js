@@ -65,6 +65,7 @@ gsap.to(".intro__zero-waste", {
   },
 });
 
+<<<<<<< HEAD
 function animateFrom(elem, direction) {
   direction = direction || 1;
   var x = 0,
@@ -91,6 +92,28 @@ function animateFrom(elem, direction) {
     overwrite: "auto"
   });
 }
+=======
+gsap.to(".intro__zero-waste", {
+  scrollTrigger: {
+    trigger: ".intro__zero-waste",
+    toggleClass: 'show',
+    start: "top center",
+    end: "bottom -100%",
+  },
+});
+
+
+
+
+// let el = [...document.querySelectorAll('.intro__state')]
+
+// let options = {
+//   rootMargin: '-10%',
+//   threshold: 0.0
+// }
+
+// let observer = new IntersectionObserver(showItem, options)
+>>>>>>> 077234117d306984f1475f9775bd81a97ac92351
 
 function hide(elem) {
   gsap.set(elem, {
