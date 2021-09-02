@@ -1,5 +1,5 @@
-@use '../utils' as *;
-@use '../config' as *;
+@use '../utils'as *;
+@use '../config'as *;
 
 .topic {
 
@@ -9,21 +9,25 @@
         @include a11yHidden;
     }
 
-    &__headline{
+    &__headline {
         width: 100wh;
         height: 100vh;
         background-color: #000;
 
-        &-content{
-        @include boxSizeMax;
+        &-content {
+            @include boxSizeMax;
         }
 
-        &-text1{
+        &-text1 {
             @include fontStyles(50px, 700, 1.5, #FFF);
+            animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+
         }
 
-        &-text2{
+        &-text2 {
             @include fontStyles(70px, 700, 1.5, #FFF);
+            animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+
         }
     }
 
@@ -42,7 +46,7 @@
         overflow: hidden;
     }
 
-    &__items:nth-child(1){
+    &__items:nth-child(1) {
         background-color: darkslategray;
         top: 0;
     }
@@ -67,13 +71,13 @@
         top: 400vh;
     }
 
-    &__container{
+    &__container {
         @include boxSizeMax;
     }
 
     &__slogan {
         display: block;
-        
+
         max-width: 1200px;
         margin: 0 auto;
         position: fixed;
