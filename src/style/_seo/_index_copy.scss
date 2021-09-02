@@ -1,0 +1,195 @@
+// @forward '내부 파일경로';
+@use '../utils/a11y'as *;
+
+.temp{
+    height: 100vh;
+    background-color: yellowgreen;
+}
+
+.topic {
+    position: relative;
+    background-color: lime;
+    &__heading {
+        display: block;
+        height: 100vh;
+        background-color: lemonchiffon;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        position: sticky;
+        z-index: 10;
+        width: 40vw;
+        height: 100vh;
+        top: 0;
+        right: 500px;
+
+        // background-color: pink;÷
+        background: url(../../src/images/zero-waste-images.svg) no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    &__list {
+        // max-height: 100vh;
+        scroll-snap-align: start;
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+    }
+
+    &__items {
+        scroll-snap-align: start;
+        background-color: #FFF;
+        display: inline-block;
+        position: relative;
+        width: 60vw;
+        height: 100vh;
+        left: 40vw;
+
+        &:nth-child(1) {
+            color: blue;
+        }
+
+        &:nth-child(1)::before {
+            content: '';
+            background-color: blue;
+            display: inline-block;
+            height: 100vh;
+            width: 40vw;
+            position: absolute;
+            left: -40vw;
+            z-index: 8;
+        }
+
+
+        &:nth-child(2) {
+            color: lightpink;
+        }
+
+        &:nth-child(2)::before {
+            content: '';
+            background-color: lightpink;
+            display: inline-block;
+            height: 100vh;
+            width: 40vw;
+            position: absolute;
+            left: -40vw;
+            z-index: 8;
+        }
+
+        &:nth-child(3) {
+            color: aliceblue;
+        }
+
+        &:nth-child(3)::before {
+            content: '';
+            background-color: aliceblue;
+            display: inline-block;
+            height: 100vh;
+            width: 40vw;
+            position: absolute;
+            left: -40vw;
+            z-index: 8;
+        }
+
+        &:nth-child(4) {
+            color: coral;
+        }
+
+        &:nth-child(4)::before {
+            content: '';
+            background-color: coral;
+            display: inline-block;
+            height: 100vh;
+            width: 40vw;
+            position: absolute;
+            left: -40vw;
+            z-index: 8;
+        }
+
+        &:nth-child(5) {
+            color: aqua;
+        }
+
+        &:nth-child(5)::before {
+            content: '';
+            background-color: aqua;
+            display: inline-block;
+            height: 100vh;
+            width: 40vw;
+            position: absolute;
+            left: -40vw;
+            z-index: 8;
+        }
+    }
+
+    &__slogan {
+
+        height: 100vh;
+        position: relative;
+        padding: 0;
+
+        &--eng {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            text-align: left;
+            font-size: 80px;
+            margin: 0;
+        }
+
+        &--emp {
+            @include a11yHidden();
+            font-size: 500px;
+        }
+
+        &--kor {
+            display: block;
+            position: absolute;
+            top: 30%;
+            right: 10%;
+            max-width: 50%;
+            word-break: keep-all;
+            font-size: 25px;
+            text-align: right;
+            line-height: 1.3
+        }
+    }
+
+}
+
+.cases {
+
+    &__heading {
+        background-color: darkseagreen;
+    }
+
+    &__list {
+        background-color: indianred;
+        display: flex;
+    }
+
+    &__card {
+        background-color: lavender;
+        display: inline-block;
+
+    }
+
+    &__slogan {
+        background-color: lawngreen;
+        text-align: center;
+    }
+
+    &__pic {
+        background-color: lightcoral;
+        width: 90%;
+    }
+
+    &__disc {
+        background-color: lightcyan;
+    }
+
+
+}

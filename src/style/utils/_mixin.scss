@@ -24,7 +24,7 @@
     height: auto;
 }
 
-// 폰트 스타일
+// 폰트 스타일 ----------------------------------------------------------- /
 @mixin fontStyles($fontSize, $fontWeight: 400, $lineHeight: inherit, $color: inherit){
     font-size: rem($fontSize);
     font-weight: $fontWeight;
