@@ -1,7 +1,9 @@
 require("dotenv").config();
+const os = require("os");
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
@@ -42,6 +44,12 @@ module.exports = {
     splitChunks: {
       chunks: "all",
     },
+    minimize: isDevelopment ? false : true,
+    minimizer: [
+      new CssMinimizerPlugin({
+        parallel: os.cpus().length - 1,
+      }),
+    ],
   },
   module: {
     rules: [
