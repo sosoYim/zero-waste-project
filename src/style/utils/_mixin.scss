@@ -38,9 +38,7 @@
 .is-flex-active{
     @include is-active(flex);
 }
-// .desactivate{
-//     display: none !important;
-// }
+
 
 //trick-indent로 글자 안보이게하기
 @mixin trick-indent {
@@ -51,4 +49,12 @@
 
 .trick-indent{
     @include trick-indent();
+}
+// 폰트 스타일
+@mixin fontStyles($fontSize, $fontWeight: 400, $lineHeight: inherit, $color: inherit){
+    font-size: rem($fontSize);
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+    color: $color;
+    @content;
 }
