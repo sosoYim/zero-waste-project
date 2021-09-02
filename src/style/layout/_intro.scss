@@ -22,11 +22,11 @@
     }
 
     &__heading.show span {
-      width: 22ch;
-      animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+      width: 30ch;
+      animation: typing 2.5s steps(30), blink .5s step-end infinite alternate;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 3px solid;
+      border-right: rem(3px) solid;
     }
 
     &__image {
@@ -83,11 +83,11 @@
     }
 
     &__video {
-      border: 3px solid $gray2;
+      border: rem(3px) solid $gray2;
       border-radius: rem(16px);
       overflow: hidden;
       background: $white;
-      box-shadow: 1px 1px 5px 1px $gray2;
+      box-shadow: rem(1px) rem(1px) rem(5px) rem(1px) $gray2;
       opacity: 0;
       transform: translateX(-150px);
 
@@ -109,7 +109,7 @@
     }
 
     &__desc {
-      font-size: 1.6vw;
+      font-size: rem(20px);
       line-height: 1.5;
       opacity: 0;
       transform: translateX(150px);
@@ -119,8 +119,12 @@
         padding: 0 2% 0 50%;
       }
 
+      @include mobile {
+        margin-top: 4%;
+      }
+
       >b {
-        font-size: 1.8vw;
+        font-size: rem(24px);
       }
     }
 
@@ -154,11 +158,18 @@
 
       position: relative;
       display: inline-block;
-      font-size: 10vmin;
       overflow: hidden;
       margin-top: calc(var(--padding) * -1);
       padding: var(--padding);
       z-index: 999;
+
+      @include desktop {
+        font-size: 10vmin;
+      }
+
+      @include mobile {
+        font-size: 7vmax;
+      }
 
       &::after {
         content: "";
@@ -231,28 +242,39 @@
   }
 
   .article {
-    display: inline-block;
-    display: -ms-flexbox;
-    @include flexbox(row, $align-items:center, $flex-wrap: wrap);
-    margin-bottom: 30px;
+    @include flexbox(row, space-between, center, wrap);
+    margin-bottom: rem(30px);
+
+    @include mobile {
+      padding: 0 20%;
+    }
 
     &__img {
       @include flexbox(row, $align-items: center);
       width: 40.42553191489362%;
       min-height: 30px;
-      margin-left: 1%;
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(2n+1) .article__img {
+      @include desktop {
+        order: 1;
+      }
     }
 
     &__img-wrapper {
-      margin-bottom: 30px;
-      border: 1px solid $gray2;
-      border-radius: 8px;
+      margin-bottom: rem(30px);
+      border: rem(1px) solid $gray2;
+      border-radius: rem(8px);
       overflow: hidden;
       background: $white;
-      box-shadow: 1px 1px 5px 1px $gray2;
+      box-shadow: rem(1px) rem(1px) rem(5px) rem(1px) $gray2;
       transition: 0.3s;
-      padding: 10px;
+      padding: rem(10px);
       height: 0;
+      width: 100%;
       padding-bottom: calc(100% - 10px);
 
       >img {
@@ -263,8 +285,15 @@
     &__desc-wrapper {
       width: 57.44680851063829%;
       min-height: 30px;
-      margin-left: 1%;
-    }
+      // margin-left: 1%;
+      line-height: 1.5;
+      @include mobile {
+        @include boxSizeMax;
+        text-align: left;
+        width: 100%;
+        font-size: rem(20px);
+      }
+    } 
 
     &__subtitle {
       font-size: rem(28px);
@@ -278,7 +307,8 @@
   @include boxSizeMax;
   color: $text-color;
   overflow: hidden;
-  height: 100vh;
+  padding-bottom: 15%;
+  height: 100%;
 
   @at-root .zero-waste {
     &__img {

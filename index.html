@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
   <!-- <link rel="stylesheet" href="./css/style/index.css"> -->
+  <meta name="description" content="기후 위기의 경각심을 일깨우고, 제로 웨이스트 캠페인을 소개합니다.">
 </head>
 
 <body>
@@ -101,7 +102,7 @@
     <!--          park     -->
     <!-- ================= -->
     <section class="intro intro__state">
-      <h2 class="state__heading" data-bgcolor="#bcb8ad"><span>현재 환경 실태를 아시나요?</span></h2>
+      <h2 class="state__heading" data-bgcolor="#bcb8ad"><span>평균 사용 시간 6개월, 썩는 데 수백 년</span></h2>
       <div class="state__content" data-bgcolor="#000000">
         <div class="content__inner">
           <div class="content__subject-wrapper">
@@ -117,65 +118,62 @@
           <source src="./videos/plastic_pollution.mp4" type="video/mp4">
         </video>
         <p class="state__desc">
-          <b>플라스틱</b>은 분해되는 데 수천 년이 걸리고 폐기 시 대부분 유독 물질을 만들어냅니다. 포장재, 비닐봉지, 도시락 시트, 빨대, 트레이 및 컵과 같은
+          <b>플라스틱</b>은 분해되는 데 수백 년이 걸리고 폐기 시 대부분 유독 물질을 만들어냅니다. 포장재, 비닐봉지, 도시락 시트, 빨대, 트레이 및 컵과 같은
           일회용 플라스틱은 도시 쓰레기의 30%에 해당하는데, 전 세계적으로 재활용되는 플라스틱은 15~20%에 불과하며 대부분이 연소되거나 매립지, 습지, 바다로 흘러가 환경을 오염시킵니다.
         </p>
       </div>
     </section>
+    <!-- INTRO ARTICLE -->
     <section class="intro intro__article">
       <h2 class="article__title a11yHidden">환경오염 기사</h2>
-      <article class="article">
+      <article aria-labelledby="article1" class="article">
         <figure class="article__img gs_reveal gs_reveal_fromLeft">
           <div class="article__img-wrapper">
-            <img class="lazy" width="479" height="100%" src="https://picsum.photos/479/479?index=3" alt="">
+            <img src="./images/article01.jpg" alt="썩는데 500년이 걸리는 플라스틱">
           </div>
         </figure>
 
         <div class="article__desc-wrapper article__left">
-          <h3 class="article__subtitle gs_reveal">Control performant <strong>Canvas</strong> animations</h3>
-          <p class="article__desc gs_reveal">GSAP makes animating with Canvas even easier by providing an easier way to
-            look and
-            sequence animations. GSAP works great with Adobe Animate and EaseJSthrough GSAP's EaselJSPlugin.</p>
+          <h3 id="article1" class="article__subtitle gs_reveal"><b>플라스틱</b> 재활용</h3>
+          <p class="article__desc gs_reveal">플라스틱 중 재활용이 가능한 재질은 PE, PP, PS, PET인데 재활용 가능한 재질을 선별하고 같은 재질끼리 모으기 까다로워
+            선별장에 모인 플라스틱의 30%~ 70%가 재활용되지 못하고 쓰레기로 배출되고 있습니다. 이렇게 배출된 플라스틱은 수백 년 동안 썩지 않아 처리하는 데 큰 어려움이 있습니다.</p>
         </div>
       </article>
-      <article class="article">
-        <div class="article__desc-wrapper article__right">
-          <h3 class="article__subtitle gs_reveal">Control performant <strong>Canvas</strong> animations</h3>
-          <p class="article__desc gs_reveal">GSAP makes animating with Canvas even easier by providing an easier way to
-            look and
-            sequence animations. GSAP works great with Adobe Animate and EaseJSthrough GSAP's EaselJSPlugin.</p>
-        </div>
+      <article aria-labelledby="article2" class="article">
         <figure class="article__img gs_reveal gs_reveal_fromRight">
           <div class="article__img-wrapper">
-            <img class="lazy" width="479" height="100%" src="https://picsum.photos/479/479?index=3" alt="">
+            <img src="./images/article02.jpg" alt="부유하는 해양 미세 플라스틱">
           </div>
         </figure>
+        <div class="article__desc-wrapper article__right">
+          <h3 id="article2" class="article__subtitle gs_reveal">해양 미세 <b>플라스틱</b></h3>
+          <p class="article__desc gs_reveal">플라스틱 폐기물이 바다로 흘러들면 수면 근처에 떠다니면서 자외선의 영향을 받고, 태양열에 의해 수축과 팽창을 반복하면서 미세플라스틱이
+            됩니다. 해양 생물에 미세 플라스틱이 축적되면서 해양 생태계뿐만 아니라 인간에게까지 영향을 미치고 있습니다.</p>
+        </div>
       </article>
-      <article class="article">
+      <article aria-labelledby="article3" class="article">
         <figure class="article__img gs_reveal gs_reveal_fromLeft">
           <div class="article__img-wrapper">
-            <img class="lazy" width="479" height="100%" src="https://picsum.photos/479/479?index=3" alt="">
+            <img src="./images/article03.jpg" alt="쌓여 있는 플라스틱 폐기물">
           </div>
         </figure>
         <div class="article__desc-wrapper article__left">
-          <h3 class="article__subtitle gs_reveal">Control performant <strong>Canvas</strong> animations</h3>
-          <p class="article__desc gs_reveal">GSAP makes animating with Canvas even easier by providing an easier way to
-            look and
-            sequence animations. GSAP works great with Adobe Animate and EaseJSthrough GSAP's EaselJSPlugin.</p>
+          <h3 id="article3" class="article__subtitle gs_reveal">코로나19와 <b>플라스틱</b> 폐기물</h3>
+          <p class="article__desc gs_reveal">코로나 19로 포장 폐기물과 일회용 방역용품 사용이 급증했습니다. 2019년에 비해 음식배달은75.1%, 택배는 19.8% 가량
+            늘었고, 생활쓰레기 발생량 또한 2019년 대비 11.2% 증가하였고, 2050년에는 플라스틱 사용량이 지금의 20배로 증가할 것이라고 합니다.</p>
         </div>
       </article>
-      <article class="article">
-        <div class="article__desc-wrapper article__right">
-          <h3 class="article__subtitle gs_reveal">Control performant <strong>Canvas</strong> animations</h3>
-          <p class="article__desc gs_reveal">GSAP makes animating with Canvas even easier by providing an easier way to
-            look and
-            sequence animations. GSAP works great with Adobe Animate and EaseJSthrough GSAP's EaselJSPlugin.</p>
-        </div>
+      <article aria-labelledby="article4" class="article">
         <figure class="article__img gs_reveal gs_reveal_fromRight">
           <div class="article__img-wrapper">
-            <img class="lazy" width="479" height="100%" src="https://picsum.photos/479/479?index=3" alt="">
+            <img src="./images/article04.jpg" alt="온실 가스를 배출하는 공장">
           </div>
         </figure>
+        <div class="article__desc-wrapper article__right">
+          <h3 id="article4" class="article__subtitle gs_reveal"><b>플라스틱</b>과 기후 위기</h3>
+          <p class="article__desc gs_reveal">플라스틱을 생산하고 폐기하는 과정에서 온실가스가 배출됩니다. 연간 전 세계 석유 소비의 약 4%에서 8%가 플라스틱 생산에 사용되고,
+            플라스틱 쓰레기 1톤이 연소 될 때마다 약 1.1톤의 이산화탄소가 대기로 방출되어 지구 온난화를 심화시킵니다.</p>
+        </div>
       </article>
     </section>
     <section class="intro intro__zero-waste">

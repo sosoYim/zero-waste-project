@@ -1,4 +1,5 @@
 //이곳에 footer, header 등 다른 곳에서 사용할 수 있는 레이아웃을 넣어주세요
-@forward './footer';
-@forward './header';
-@forward './visual';
+
+@forward './cases';
+@forward './topic';
+@forward './intro';
