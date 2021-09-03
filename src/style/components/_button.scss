@@ -4,7 +4,6 @@
 
 @mixin button($padding-tb: rem(20px), $padding-lr: rem(20px)){
     appearance: none;
-    // pointer-events: none;
     border: 0;
     background : $primary;
     color: $white;
