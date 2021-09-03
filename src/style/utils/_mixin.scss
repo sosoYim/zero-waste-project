@@ -1,5 +1,58 @@
+
+// 폰트 스타일
+@mixin fontStyles($fontSize, $fontWeight: 400, $lineHeight: inherit, $color: inherit){
+    font-size: rem($fontSize);
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+    color: $color;
+    @content;
+}
+
 // Auto Margin을 활용한 박스 가운데 정렬 ------------------------------------------------ /
 @mixin autoMargin($marginX: auto) {
     margin-left: $marginX;
     margin-right: $marginX;
+}
+
+// 요소 박스의 최대 크기 설정 ----------------------------------------------------------- /
+@mixin boxSizeMax($width: 1200px, $paddingX: 0){
+    max-width: $width;
+    padding-left: $paddingX;
+    padding-right: $paddingX;
+    @include autoMargin();
+    @content;
+}
+
+// 반응형 미디어 ----------------------------------------------------------- /
+@mixin responsive($width: max-width){
+    #{$width}: 100%;
+    height: auto;
+}
+
+
+// STATUS components==============
+// display 속성 변환
+@mixin is-active($display: block){
+    display: $display !important;
+    @content;
+}
+
+.is-active{
+    @include is-active();
+}
+
+.is-flex-active{
+    @include is-active(flex);
+}
+
+
+//trick-indent로 글자 안보이게하기
+@mixin trick-indent {
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+}
+
+.trick-indent{
+    @include trick-indent();
 }

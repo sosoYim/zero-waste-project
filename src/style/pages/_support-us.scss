@@ -1,0 +1,162 @@
+@use '../utils/' as *;
+@use '../config' as *;
+
+.support-us {
+    &__container {
+        position: relative;
+        width: 100%;
+        padding-top: 35%;
+    }
+    &__wrapper {
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 35%;
+    }
+    &__video {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+
+    &__heading {
+        text-align: center;
+        font-weight: 700;
+        
+        @include mobile {
+            font-size: rem(32px);
+            word-break: keep-all;
+            line-height: rem(48px);
+            margin-top: rem(72px);
+        }
+        @include desktop {
+            font-size: rem(48px);
+            margin-top: rem(96px);
+        }
+    }
+
+    &__form {
+        padding: 0 rem(20px);
+
+        @include mobile {
+            margin-top: rem(32px);
+        }
+        @include desktop {
+            margin-top: rem(64px);
+        }
+        fieldset {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            max-width: 1200px;
+            flex-grow: 1;
+        }
+    }
+    @at-root [class^='support-us__input'] {
+        border: 0;
+        background-color: transparent;
+        padding: rem(12px);
+        margin-right: rem(20px);
+        border-bottom: 1px solid rgba($text-color, 0.5);
+        word-break: keep-all;
+
+        @include mobile {
+            min-width: 100%;
+        }
+
+        &:hover {
+            border-bottom: 2px solid $text-color;
+        }
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid $text-color;
+        }
+    }
+    &__input-name {
+        flex-grow: 1;
+    }
+    &__input-message {
+        flex-grow: 8;
+        
+        @include mobile {
+            margin-top: rem(16px);
+        }
+    }
+    &__form-button {
+        flex-grow: 1;
+        border: 0;
+        background-color: $text-color;
+        color: $white;
+        border-radius: rem(8px);
+        word-break: keep-all;
+
+        &:hover {
+            background-color: lighten($text-color, 12);
+        }
+        &:focus {
+            background-color: lighten($text-color, 12);
+        }
+        &:active {
+            background-color: lighten($text-color, 12);
+        }
+
+        @include mobile {
+            margin-top: rem(32px);
+            padding: rem(16px) 0;
+        }
+    }
+
+    &__bricks {
+        background-color: $white;
+        margin-top: rem(96px);
+        padding-top: rem(48px);
+        padding-bottom: rem(400px);
+    }
+
+    &__list-heading {
+        text-align: center;
+        font-size: rem(40px);
+        font-weight: 500;
+        
+        @include mobile {
+            font-size: rem(28px);
+            word-break: keep-all;
+        }
+    }
+
+    &__list {
+        margin: rem(72px) rem(20px) 0;
+        font-size: rem(32px);
+        font-weight: 500;
+
+        @include mobile {
+            font-size: rem(24px);
+            word-break: keep-all;
+        }
+    }
+
+    &__item-name {
+        font-size: rem(16px);
+        font-weight: 400;
+        position: absolute;
+        right: 0;
+        bottom: rem(16px);
+        
+        @include mobile {
+            font-size: rem(14px);
+            word-break: keep-all;
+        }
+    }
+    
+    &__item-message {
+        position: relative;
+        max-width: 1200px;
+        text-align: center;
+        padding: rem(16px);
+        border-bottom: 1px dashed $text-color;
+        margin: 0 auto;
+        margin-top: rem(16px);
+
+    }
+}

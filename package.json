@@ -4,8 +4,9 @@
   "description": "Azang's first mini project : zero-waste",
   "main": "index.js",
   "scripts": {
-    "start": "run-p watch serve",
-    "dev": "webpack serve --node-env=development",
+    "dev": "npm run dev__",
+    "start": "run-p clear build",
+    "dev__": "webpack serve --node-env=development",
     "build": "webpack build --node-env=production",
     "clear": "rimraf -rf build dist",
     "sass": "sass src:css",
@@ -24,10 +25,20 @@
   },
   "homepage": "https://github.com/jkpark104/zero-waste-project#readme",
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-arrow-functions": "^7.14.5",
+    "@babel/plugin-transform-template-literals": "^7.14.5",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.2.0",
+    "css-minimizer-webpack-plugin": "^3.0.2",
     "dotenv": "^10.0.0",
     "html-webpack-plugin": "^5.3.2",
+    "imagemin-svgo": "^9.0.0",
     "live-server": "^1.2.1",
     "mini-css-extract-plugin": "^2.2.0",
     "normalize.css": "^8.0.1",
@@ -48,5 +59,6 @@
     "not dead",
     "> 1% in KR",
     "ie 11"
-  ]
+  ],
+  "dependencies": {}
 }

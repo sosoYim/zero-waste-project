@@ -1,0 +1,27 @@
+@use '../config' as *;
+@use '../utils' as *;
+// Defult form components=========FROM YIM
+
+@mixin button($padding-tb: rem(20px), $padding-lr: rem(20px)){
+    appearance: none;
+    border: 0;
+    background : $primary;
+    color: $white;
+    padding: $padding-tb $padding-lr;
+    border-radius: rem(5px);
+    text-align: center;
+    @content;
+}
+.button {
+    @include button;
+}
+
+@mixin buttonNone{
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+    @content;
+}
+.buttonNone{
+    @include buttonNone();
+}

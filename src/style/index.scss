@@ -1,5 +1,6 @@
 @use './base';
-@use './_park';
-@use './_son';
-@use './_seo';
-@use './_yim';
+@use './components';
+@use './pages';
+@use './layout';
+// @use './config';
+// @use './utils';

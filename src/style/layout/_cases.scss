@@ -1,0 +1,137 @@
+@use '../utils'as *;
+@use '../config'as *;
+
+.cases {
+    z-index: 20;
+    background-color: #FFF;
+    position: relative;
+    min-height: 100vh;
+    text-align: center;
+    color: $text-color2;
+
+    @include desktop {
+        padding: rem(100px);
+    }
+
+    @include mobile {
+        padding: rem(24px);
+    }
+
+
+    &__heading {
+        display: block;
+        margin-bottom: rem(50px);
+        font-weight: 700;
+        word-break: keep-all;
+        line-height: 1.3;
+        white-space: pre-wrap;
+
+        &--group1 {
+            display: inline-block;
+            color: $primary;
+
+            @include mobile {
+                font-size: 12vmin;
+            }
+
+            @include desktop {
+                font-size: 17vmin;
+            }
+        }
+
+        &--group2 {
+            display: inline-block;
+            color: $text-color2;
+
+            @include mobile {
+                font-size: 10vmin;
+            }
+
+            @include desktop {
+                font-size: 15vmin;
+            }
+        }
+    }
+
+    &__list {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: auto;
+        @include flexbox(row, space-around, center, wrap);
+    }
+
+    &__card {
+        display: inline-block;
+
+        margin: rem(20px);
+        padding: rem(20px);
+        overflow: hidden;
+        position: relative;
+
+        @include mobile {
+            width: 100%;
+        }
+
+        @include desktop {
+            max-width: rem(300px);
+            min-width: rem(200px);
+        }
+    }
+
+    &__slogan {
+        @include fontStyles(35px, 700, inherit, inherit);
+        margin-bottom: rem(10px);
+        text-align: left;
+    }
+
+    &__pic {
+        width: 100%;
+        border-radius: rem(5px);
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1), 8px 8px 8px rgba(0, 0, 0, 0.1);
+        margin: auto;
+        transition: 0.4s;
+    }
+
+    &__card:hover &__pic {
+        opacity: 0.3;
+        transition: 0.4s;
+    }
+
+    &__hashtag {
+        @include fontStyles(16px, 400, inherit, inherit);
+        margin-top: rem(10px);
+    }
+
+    &__desc {
+        color: $text-color2;
+        display: block;
+        font-size: rem(22px);
+        width: 70%;
+        word-break: keep-all;
+        line-height: 1.3;
+        position: absolute;
+        top: 40%;
+        right: 50%;
+        transform: translate(50%, 400%);
+        transition: 0.4s;
+    }
+
+    &__card:hover &__desc {
+        transform: translate(50%, 0);
+        color: $text-color2;
+        transition: 0.4s;
+    }
+
+    &__button {
+        display: inline-block;
+        margin: rem(50px) auto;
+        padding: rem(20px);
+
+        @include desktop {
+            font-size: rem(16px);
+        }
+    }
+}
