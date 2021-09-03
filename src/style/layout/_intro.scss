@@ -4,7 +4,7 @@
 // INTRO__STATE || INTRO 1번
 .intro__state {
   overflow: hidden;
-
+  
   .state {
     &__heading {
       @include flexbox(row, center, center);

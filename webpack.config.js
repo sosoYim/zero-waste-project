@@ -1,10 +1,11 @@
 require("dotenv").config();
+const os = require("os");
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 const isDevelopment = process.env.NODE_ENV === "development";
 const paths = {
@@ -42,6 +43,12 @@ module.exports = {
     splitChunks: {
       chunks: "all",
     },
+    minimize: isDevelopment ? false : true,
+    minimizer: [
+      new CssMinimizerPlugin({
+        parallel: os.cpus().length - 1,
+      }),
+    ],
   },
   module: {
     rules: [{
@@ -87,7 +94,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.js$/i,
+        test: /js\.js$/i,
         exclude: /node_modules/,
         use: ["babel-loader"],
       },

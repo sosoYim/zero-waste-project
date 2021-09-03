@@ -69,10 +69,11 @@
     }
     &__bear{
         width: 200px;
+        height: auto;
         position: absolute;
         top: 15vh;
         left: 50%;
-        transform: translate(-50, 0%);
+        transform: translate(-50, 0);
         animation: up-down 5s ease-in-out infinite alternate;
         // z-index: 10; 
     }
@@ -109,17 +110,15 @@
     }
     &__radio{
         appearance: none;
+        display: none;
     }
     &__label{
+        @include button();
+        font-size: rem(24px);
         cursor: pointer;
         display: block;
         width: 100%;
         height: auto;
-        text-align: center;
-        padding: rem(32px) rem(16px);
-        border-radius: rem(8px);
-        background-color: $primary;
-        color: $white;
         margin-top: rem(16px);
     }  
 
@@ -127,5 +126,6 @@
         height: 6rem;
         text-align: center;
         line-height: 5rem;
+        font-size: rem(24px);
     }
 }
