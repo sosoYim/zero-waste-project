@@ -33,7 +33,20 @@ Azang's first mini project : zero-waste
 
 ## 성능 최적화
 > 이미지 최적화
-(...)
+
+- 적절한 이미지포맷 사용
+- 적절한 크기의 이미지 사용
+- Lazy Loading 기법 (정확히 말하면 이미지 최적화는 아님)
+
+> 동영상 최적화
+
+- 인코딩을 거쳐 소리제거 및 해상도 편집
+
+> 미해결 부분
+
+- JS를 이용한 Lazy Loading기법
+- 동영상 이미지 포맷 제공(webm)
+- Imagemin 플러그인
 
 ## 마크업
 > 웹표준에 기반한 semantic Markup
@@ -41,6 +54,7 @@ Azang's first mini project : zero-waste
 
 ## 스타일
 > Scss 를 이용한 스타일 모듈화 및 구조화
+- base, components, config, layout, pages, utils로 폴더 구성
 
 ## 빌드 
 > 웹팩
