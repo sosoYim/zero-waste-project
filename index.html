@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zero-Waste</title>
-  <!-- <link rel="stylesheet" href="./css/style/index.css"> -->
   <meta name="description" content="기후 위기의 경각심을 일깨우고, 제로 웨이스트 캠페인을 소개합니다.">
 </head>
 
@@ -42,7 +41,7 @@
           <li class="header__nav-item support-us"><a class="header__nav-link" href="/supportUs.html">Support Us</a></li>
         </ul>
         <!-- 수정 -->
-        <button class="nav__close"><span>×</span></button>
+        <button class="nav__close"><span aria-hidden="true">×</span></button>
       </div>
     </nav>
 
@@ -106,12 +105,12 @@
             <h3 class="content__subject"><span>쌓여 가는 플라스틱</span></h3>
           </div>
           <figure class="state__image">
-            <img src="./images/bird-onlake.png" alt="플라스틱 병을 물고 있는 새">
+            <img src="./images/bird-onlake.jpeg" alt="플라스틱 병을 물고 있는 새">
           </figure>
         </div>
       </div>
       <div class="state__desc-wrapper">
-        <video class="state__video" autoplay loop muted playsinline>
+        <video class="state__video" aria-label="플라스틱 산" autoplay loop muted playsinline>
           <source src="./videos/plastic_pollution.mp4" type="video/mp4">
         </video>
         <p class="state__desc">
@@ -194,11 +193,10 @@
     <!-- topic 섹션 -->
     <section class="topic">
       <h2 class="topic__heading">제로 웨이스트 실천 방법</h2>
-    
+
       <div class="topic__headline">
         <p class="topic__headline-content">
-          <span class="topic__headline-text1">제로 웨이스트 실천 방법</span>
-          <span class="topic__headline-text1">5R</span>
+          <span class="topic__headline-text">제로 웨이스트 실천 방법 - 5R</span>
         </p>
       </div>
 
@@ -316,7 +314,7 @@
       </ul>
 
 
-      <a href="./mbti.html" class="cases__button button">나의 제로 웨이스트 점수 확인하기 👉</a>
+      <a href="./mbti.html" class="cases__button button">지구가 보는 나의 모습은?</a>
     </section>
 
     <!-- ================= -->
@@ -328,15 +326,15 @@
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__connect">
-        <h2 class="footer__connect-heading">Connect With Us</h2>
+        <span class="footer__connect-heading">Connect With Us</span>
         <address class="footer__connect-item">Ajangs@gmail.com</address>
       </div>
       <div class="footer__support">
-        <h2 class="footer__support-heading">Support Us</h2>
+        <span class="footer__support-heading">Support Us</span>
         <p class="footer__support-item">Find out more about how you can support our work here</p>
       </div>
       <div class="footer__follow">
-        <h2 class="footer__follow-heading">Follow Us</h2>
+        <span class="footer__follow-heading">Follow Us</span>
         <ul class="footer__follow-list">
           <li class="footer__follow-item"><a href="#">Facebook</a></li>
           <li class="footer__follow-item"><a href="#">Instagram</a></li>
@@ -347,17 +345,8 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
-    integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
-    integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"
-    integrity="sha512-DlTk2PLUinhBupE89kHOJTt11QqbRMQVlbb26XVDvp4D1kt0fRvQJslvZnTelRJHq6yK0tIPCR7cul8+9Blz0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js"></script>
+  <script src="./js/gsap.min.js"></script>
+  <script src="./js/ScrollTrigger.min.js"></script>
   <script src="./js/main.js"></script>
   <script src="./js/scroll.js"></script>
 

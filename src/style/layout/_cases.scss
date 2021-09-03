@@ -2,14 +2,21 @@
 @use '../config'as *;
 
 .cases {
-
     z-index: 20;
     background-color: #FFF;
     position: relative;
     min-height: 100vh;
     text-align: center;
     color: $text-color2;
-    padding: rem(100px);
+
+    @include desktop {
+        padding: rem(100px);
+    }
+
+    @include mobile {
+        padding: rem(24px);
+    }
+
 
     &__heading {
         display: block;
@@ -47,6 +54,7 @@
     }
 
     &__list {
+        width: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -64,8 +72,7 @@
         position: relative;
 
         @include mobile {
-            max-width: rem(300px);
-            min-width: rem(200px);
+            width: 100%;
         }
 
         @include desktop {
@@ -119,9 +126,12 @@
     }
 
     &__button {
-        display: block;
+        display: inline-block;
         margin: rem(50px) auto;
         padding: rem(20px);
-        width: 50%;
+
+        @include desktop {
+            font-size: rem(16px);
+        }
     }
 }

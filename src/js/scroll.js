@@ -108,3 +108,17 @@ gsap.to(".intro__zero-waste", {
     end: "bottom center",
   },
 });
+
+
+// TOPIC 애니메이션
+gsap.to('.topic__headline-content', {
+  scrollTrigger: {
+    trigger: ".topic__headline-content",
+    start: "20% center",
+    end: "80% 15%",
+    toggleClass: {
+      targets: ".topic__headline-content",
+      className: "show"
+    }
+  },
+});

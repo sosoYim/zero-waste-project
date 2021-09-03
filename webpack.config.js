@@ -44,8 +44,7 @@ module.exports = {
     },
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.s(a|c)ss$/i,
         exclude: /node_modules/,
         use: [
@@ -100,34 +99,19 @@ module.exports = {
       filename: "./css/style.css",
     }),
     new CopyPlugin({
-      patterns: [
-        {
-          from: "src",
-        },
-      ],
-    }),
-    new ImageMinimizerPlugin({
-      // 제외설정
-      exclude: /node_modules/,
-      // 최적화옵션
-      minimizerOptions: {
-        plugins: [
-          ["gifsicle", { interlaced: true }],
-          ["jpegtran", { progressive: true }],
-          ["optipng", { optimizationLevel: 5 }],
-          ["svgo", { plugins: [{ removeViewBox: false }] }],
-        ],
-      },
-    }),
+      patterns: [{
+        from: "src",
+      }, ],
+    })
   ].concat(
     pages.map(
       (page) =>
-        new HtmlWebpackPlugin({
-          inject: true,
-          template: `./${page}.html`,
-          filename: `${page}.html`,
-          chunks: [page],
-        })
+      new HtmlWebpackPlugin({
+        inject: true,
+        template: `./${page}.html`,
+        filename: `${page}.html`,
+        chunks: [page],
+      })
     )
   ),
 };
