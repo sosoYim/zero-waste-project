@@ -51,8 +51,7 @@ module.exports = {
     ],
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.s(a|c)ss$/i,
         exclude: /node_modules/,
         use: [
@@ -107,21 +106,19 @@ module.exports = {
       filename: "./css/style.css",
     }),
     new CopyPlugin({
-      patterns: [
-        {
-          from: "src",
-        },
-      ],
-    }),
+      patterns: [{
+        from: "src",
+      }, ],
+    })
   ].concat(
     pages.map(
       (page) =>
-        new HtmlWebpackPlugin({
-          inject: true,
-          template: `./${page}.html`,
-          filename: `${page}.html`,
-          chunks: [page],
-        })
+      new HtmlWebpackPlugin({
+        inject: true,
+        template: `./${page}.html`,
+        filename: `${page}.html`,
+        chunks: [page],
+      })
     )
   ),
 };
